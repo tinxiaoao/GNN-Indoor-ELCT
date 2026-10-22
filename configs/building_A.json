@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "building": "A",
+  "sample_id": "193",
+  "input_source_type": "annotation_derived",
+  "dataset_split": "train",
+  "maps": {
+    "wall": {
+      "path": "../examples/local_assets/193/wall_svg.png",
+      "sha256": "790bf4070bce47937ffc223f80bf7d4eac8fd165bfe412fabd135afe0a30eacb",
+      "width": 1069,
+      "height": 1103
+    },
+    "icon": {
+      "path": "../examples/local_assets/193/icon_svg.png",
+      "sha256": "6ed2538cdbf2e3ff719886653f795f243cb8204105d5cab09c8507fe4f12410f",
+      "width": 1069,
+      "height": 1103
+    },
+    "rough": {
+      "path": "../examples/local_assets/193/svgImg_roughcast.png",
+      "sha256": "6bf488419cc6e38ba399a2c762a0621679d46fb885e2cdfe55259427c7b593cb",
+      "width": 1069,
+      "height": 1103
+    }
+  },
+  "extraction": {
+    "mode": "none",
+    "lightweight": false
+  },
+  "outputs": {
+    "directory": "../runs/building_A_none"
+  },
+  "reference_results": {
+    "status": "Held in private audit; not supplied as a runtime input",
+    "room_table": "../reference_results/local/193/debug_roomself.xlsx",
+    "edge_table": "../reference_results/local/193/debug_topology_edges.xlsx",
+    "room_mask": "../reference_results/local/193/region_id_map.npy",
+    "topology_image": "../reference_results/local/193/debug_topology_result.png"
+  },
+  "matlab_documentation_only": {
+    "configured_by_python_extractor": false,
+    "snapshot_config": null,
+    "px2m_source_value": 0.010097,
+    "px2m_evidence": "comment in C driver; original calibration clicks unavailable",
+    "all_submitted_scenes_verified": false,
+    "unconfirmed": [
+      "scene-to-historical-run binding",
+      "floor/ceiling settings versus manuscript",
+      "layer thickness convention",
+      "window-open sensitivity implementation"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "source_files": [
+    {
+      "name": "model_roughcast(2).svg",
+      "sha256": "7868dbc671ca1dfeeb107a85117c0480063518aa77401de9ffb5c7e48e4fd9cc"
+    },
+    {
+      "name": "BuildingC_empirical_ARP_results_with_errors(5).xlsx",
+      "sha256": "4ab8c3c6b4b9ea7eeb6c29b61e04528cd37d6c52aa49f7c0ccb0fd9e2b4dc8cf"
+    },
+    {
+      "name": "BuildingC_recalculated_empirical_MWM_ARP.xlsx",
+      "sha256": "cbfb75de89d2a563c4a0d00d60c95bdad77cda314534e8dd883158f2d578d0ec"
+    }
+  ],
+  "reference_override": "C4 user-supplied 54 values, in blocks of 18 rooms at 2.4,5,28 GHz",
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "shapely": "2.1.2"
+  },
+  "protocol": "Retain original C1 parameters. Nine fresh fits. Never select fitted parameter set using target-configuration error."
+}

@@ -1,0 +1,5 @@
+# Direct runtime dependencies actually imported for the release check (Python 3.11.10).
+# Tested in an isolated local environment; online installation was not validated.
+numpy==1.26.4
+scipy==1.13.1
+shapely==2.0.6

@@ -1,0 +1,28 @@
+{
+  "case_id": "synthetic_two_rooms_multifrequency",
+  "sample_id": "synthetic_two_rooms",
+  "room_table": "../runs/synthetic_two_rooms_none/debug_roomself.xlsx",
+  "topology_table": "../runs/synthetic_two_rooms_none/debug_topology_edges.xlsx",
+  "output_dir": "../runs/pwb_synthetic_multifrequency",
+  "frequency_hz": [
+    2400000000,
+    5000000000
+  ],
+  "px2m": 0.02,
+  "heights_m": {
+    "wall": 3.0,
+    "door": 2.7,
+    "window": 1.0
+  },
+  "door_is_open": true,
+  "tx_room_ids": [
+    1
+  ],
+  "tx_power_dbm": [
+    15
+  ],
+  "notes": [
+    "Synthetic interface example with explicitly chosen dimensions, scale, and transmitter; not a paper building or a paper scenario.",
+    "Two distinct frequencies test a real frequency axis without modifying the frozen physical core."
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "source_identity": "candidate_B",
+    "source_file": "extract_rooms.py",
+    "package_path": "geo_elct/extract_rooms.py",
+    "original_sha256": "3fbd1d2a1a8d115a93f02d1f352c15aaf16e96677483de7a2808e9bfb6f383d1",
+    "packaged_sha256": "3fbd1d2a1a8d115a93f02d1f352c15aaf16e96677483de7a2808e9bfb6f383d1",
+    "change_type": "byte_identical_copy"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "detect_adjacency.py",
+    "package_path": "geo_elct/detect_adjacency.py",
+    "original_sha256": "40fb60ee514632e3c822529346e8de60831adb4bfc281d8a678926b259e248c8",
+    "packaged_sha256": "40fb60ee514632e3c822529346e8de60831adb4bfc281d8a678926b259e248c8",
+    "change_type": "byte_identical_copy"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "exterior_wall.py",
+    "package_path": "geo_elct/exterior_wall.py",
+    "original_sha256": "90990ce95a5b60745ec4ff952363e4bdb9bc7495dbcbfedf3155116c8f9bc8f6",
+    "packaged_sha256": "ede9253d19e156e39f2722c8e72e40fdf6fd81dcaaf27aa4e865317191ba49a5",
+    "change_type": "package_import_path"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "save_topology_image.py",
+    "package_path": "geo_elct/save_topology_image.py",
+    "original_sha256": "2e961047c364731b6c49514af9f5ab6668acd4b2165c8359ff5a3aa1217e1663",
+    "packaged_sha256": "2e961047c364731b6c49514af9f5ab6668acd4b2165c8359ff5a3aa1217e1663",
+    "change_type": "byte_identical_copy"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "debug_topology.py",
+    "package_path": "geo_elct/debug_topology.py",
+    "original_sha256": "7fc52460268da60b35b24c03ba23abd9151c69d6ee60b18c9c28950a30d0240b",
+    "packaged_sha256": "0f2e39b9638a431032f3420aca357df203565bdc9e2abef266721652ca848f3a",
+    "change_type": "package_import_path"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "self_correction.py",
+    "package_path": "geo_elct/self_correction.py",
+    "original_sha256": "0685a1d674e62c43daf51101d60f60a9c6b8016f505777ca4843213ed1a2e5f2",
+    "packaged_sha256": "64f536b05058e90269815cf0e4ba8fd63f87f47bdd17d7f42b4be58f1cbaff7c",
+    "change_type": "package_import_path;docstring_only"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "parse_elct_tables.py",
+    "package_path": "geo_elct/evaluation/parse_elct_tables.py",
+    "original_sha256": "ac0eb3f26dca8a00b491f4401d37001f591251d9bd7f3c495582106171dfdf89",
+    "packaged_sha256": "ac0eb3f26dca8a00b491f4401d37001f591251d9bd7f3c495582106171dfdf89",
+    "change_type": "byte_identical_copy"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "compare_elct_tables.py",
+    "package_path": "geo_elct/evaluation/compare_elct_tables.py",
+    "original_sha256": "5ef0b1c10ffaee24f81dd4f06feb3175ed34666073b4968819dc7eb701a5b5ef",
+    "packaged_sha256": "f883c97a8bdb6fca8d47568c4a2a31cee00b525b0b6379aa4ee0610b12fb2dec",
+    "change_type": "package_import_path"
+  },
+  {
+    "source_identity": "candidate_B",
+    "source_file": "evaluate_reference_faithful_tables.py",
+    "package_path": "geo_elct/evaluation/evaluate_reference_faithful_tables.py",
+    "original_sha256": "6c3c90fe43260d13f486acc435eef04a0a5e3271abac6ba38f3cee380bda9ef2",
+    "packaged_sha256": "9c9e1b74c81dafcfdb95b13da5a05b7597c2ad04a249b6b74d5918870b4e9a39",
+    "change_type": "package_import_path"
+  }
+]

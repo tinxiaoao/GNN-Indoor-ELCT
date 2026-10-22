@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript identified below when using this code. Bibliographic publication details are not yet supplied."
+type: software
+title: "GNN-Indoor ELCT: A Generalizable Broadband Indoor Propagation Framework Based on Graph Neural Networks Integrated with Electrically Large Cavity Topology"
+authors:
+  - family-names: Hong
+    given-names: Juting
+  - family-names: Zhao
+    given-names: Xiang
+  - family-names: Song
+    given-names: Kai
+  - family-names: Liu
+    given-names: Changjun
+  - family-names: Yan
+    given-names: Liping

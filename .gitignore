@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+venv/
+local/
+runs/
+examples/local_assets/
+reference_results/local/
+.idea/
+.vscode/
+~$*
+.DS_Store
+Thumbs.db
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Local records from the earlier release preparation.
+/ASSET_MANIFEST.csv
+/RELEASE_CHECKLIST.md
+/docs/package_validation.json

@@ -1,0 +1,59 @@
+{
+  "origin": "current_IndoorEMT",
+  "modules": [
+    {
+      "file": "core/roomWallSegments.m",
+      "source_sha256": "fcd233bd8056141f9f9dd5c64d4955e8360cb571a18e62e7863ba6a55d23d89a",
+      "candidate_sha256": "fcd233bd8056141f9f9dd5c64d4955e8360cb571a18e62e7863ba6a55d23d89a",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/computeRoomSelfLoss.m",
+      "source_sha256": "34de560dd57e489500eff3c22e17b960ca2b4dc3bb8514d7066c2a918c02e93e",
+      "candidate_sha256": "34de560dd57e489500eff3c22e17b960ca2b4dc3bb8514d7066c2a918c02e93e",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/computeRoomCouplings.m",
+      "source_sha256": "df5df63e3d0eab35965f0e9921d294c2ec907466d60c6d96ef945e4362350fe6",
+      "candidate_sha256": "df5df63e3d0eab35965f0e9921d294c2ec907466d60c6d96ef945e4362350fe6",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/multi_layer_model.m",
+      "source_sha256": "374bb55fce99ed7c1a961119dab43a12d7cbe1fefc4f8ee9e31e05c1af349d00",
+      "candidate_sha256": "374bb55fce99ed7c1a961119dab43a12d7cbe1fefc4f8ee9e31e05c1af349d00",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/assemblePropagationMatrix.m",
+      "source_sha256": "bea30b6ffb1727e160249137e974cc08b28930249b364a415d93315bd3dee284",
+      "candidate_sha256": "bea30b6ffb1727e160249137e974cc08b28930249b364a415d93315bd3dee284",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/calculateRoomPowerLevels.m",
+      "source_sha256": "6d89f36367e7eeae84c8d35bebedcdbbc9f3261bbc2472c33a9fa054f662d4b1",
+      "candidate_sha256": "6d89f36367e7eeae84c8d35bebedcdbbc9f3261bbc2472c33a9fa054f662d4b1",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/calculateReceivedPower.m",
+      "source_sha256": "da2f0344b788b035fa276b0cf6d9ab4d2349891cec0e9d2714199a0f965c99e2",
+      "candidate_sha256": "da2f0344b788b035fa276b0cf6d9ab4d2349891cec0e9d2714199a0f965c99e2",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/compute_coverage_loss_from_list.m",
+      "source_sha256": "3a9aae68ac68bc9e0e1a6190de5144cffe7a9ccf746e3581ce415b3abd8865ff",
+      "candidate_sha256": "3a9aae68ac68bc9e0e1a6190de5144cffe7a9ccf746e3581ce415b3abd8865ff",
+      "change_type": "byte_identical_copy"
+    },
+    {
+      "file": "core/epsilon_paper_tabel.txt",
+      "source_sha256": "0d628a984a5cff8bef3ae52d801f9fbdeaa804a358e320fb3ef6b0f2fa0ed9d6",
+      "candidate_sha256": "0d628a984a5cff8bef3ae52d801f9fbdeaa804a358e320fb3ef6b0f2fa0ed9d6",
+      "change_type": "byte_identical_copy"
+    }
+  ]
+}

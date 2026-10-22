@@ -1,0 +1,59 @@
+{
+  "algorithm_version": "correction_v2.0",
+  "values": {
+    "wall_code": 2,
+    "opening_labels": [
+      1,
+      2
+    ],
+    "fragment": {
+      "min_fragment_area_px": 160,
+      "fragment_area_ratio": 0.002,
+      "dominant_neighbor_fraction": 0.8,
+      "touch_ring_radius_px": 1,
+      "dominance_ring_radius_px": 2,
+      "connectivity": 8
+    },
+    "wall_boundary": {
+      "max_bulge_span_px": 20,
+      "support_extension_px": 6,
+      "body_depth_px": 3,
+      "min_body_fraction": 0.98,
+      "min_host_fraction": 0.95
+    },
+    "wall_gap": {
+      "max_length_px": 6,
+      "max_area_px": 512,
+      "min_endpoint_alignment_fraction": 0.9,
+      "max_endpoint_thickness_difference_px": 2,
+      "support_extension_px": 6,
+      "min_support_fraction": 0.95,
+      "opening_clearance_px": 1,
+      "min_room_side_dominance": 0.9
+    },
+    "validation": {
+      "max_wall_thickness_px": 64,
+      "tiny_room_area_px": 160
+    },
+    "opening": {
+      "snap_max_distance_px": 3,
+      "min_wall_overlap_fraction": 0.995,
+      "partial_gap_max_length_px": 4,
+      "completion_pass_limit_per_label": 8,
+      "spurious_component_area_px": 8,
+      "normal_probe_radius_px": 2,
+      "lateral_domain_radius_px": 2,
+      "inplace_exterior_lip_max_px": 1,
+      "outside_labels": [
+        0,
+        1,
+        8,
+        50
+      ],
+      "outside_connectivity": 4,
+      "opening_connectivity": 8,
+      "collision_clearance_px": 1
+    }
+  },
+  "consumer_note": "opening/wall_code/opening_labels read by correction_v2; inherited preprocessing/validation values are snapshots of the unchanged self_correction.REFERENCE_FREE_CONFIG actually read by reused functions; this JSON is not a runtime override."
+}

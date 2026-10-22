@@ -1,0 +1,34 @@
+{
+  "kind": "saved regression target computed during this preparation, not physical ground truth",
+  "date": "2026-10-15",
+  "mode": "none",
+  "synthetic_input_config": "examples/synthetic_two_rooms/case.json",
+  "input_sha256": {
+    "wall": {
+      "path": "wall.png",
+      "sha256": "e29ceaecf7d5f25a40cf6bf0a6be0879bd2a44f10e62461acdd5c41c92466722",
+      "width": 220,
+      "height": 160
+    },
+    "icon": {
+      "path": "icon.png",
+      "sha256": "f1ad4d72b8064084c684ed8ee81d01c168706b26eb59d5d51d07bf236cdd7159",
+      "width": 220,
+      "height": 160
+    },
+    "rough": {
+      "path": "rough.png",
+      "sha256": "e29ceaecf7d5f25a40cf6bf0a6be0879bd2a44f10e62461acdd5c41c92466722",
+      "width": 220,
+      "height": 160
+    }
+  },
+  "files": {
+    "debug_roomself.xlsx": "ba9ac055293fba50da73aa2bcab7d0d8a004882df8ee37322e8955c36c15546b",
+    "debug_topology_edges.xlsx": "c09ed004f00be7000586e76a55dfcea89f0575dc4976b4856fd9abfdaad69471",
+    "region_id_map.npy": "fb359587560d34983f70ceec377d55662ba3a602a0cc8f2d8477d1961468cade",
+    "rooms.json": "0239cffab3fb1ebe774dec741185b141404cbbbb264ca23557cf27f9edddcef4",
+    "edges.json": "fd1967da0c6725d48b83a51cb5f92630eb6e2e7f00399753b19604c439af4bc5",
+    "room_stats.json": "befbda5cbd9155e446e5d1c316e2134e31779d671278fef2f188a8082710f8ec"
+  }
+}

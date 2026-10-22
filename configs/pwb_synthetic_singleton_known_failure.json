@@ -1,0 +1,27 @@
+{
+  "case_id": "synthetic_two_rooms_singleton_known_failure",
+  "sample_id": "synthetic_two_rooms",
+  "room_table": "../runs/synthetic_two_rooms_none/debug_roomself.xlsx",
+  "topology_table": "../runs/synthetic_two_rooms_none/debug_topology_edges.xlsx",
+  "output_dir": "../runs/pwb_synthetic_singleton_known_failure",
+  "frequency_hz": [
+    2400000000
+  ],
+  "px2m": 0.02,
+  "heights_m": {
+    "wall": 3.0,
+    "door": 2.7,
+    "window": 1.0
+  },
+  "door_is_open": true,
+  "tx_room_ids": [
+    1
+  ],
+  "tx_power_dbm": [
+    15
+  ],
+  "notes": [
+    "Expected frozen-core failure: assemblePropagationMatrix:SizeMismatch because MATLAB collapses the trailing singleton frequency dimension.",
+    "No frequency is repeated and no numerical shape fix is included."
+  ]
+}

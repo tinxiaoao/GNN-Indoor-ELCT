@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "scope": "Hash-only identities of earlier isolated baseline artifacts. Binary assets are not bundled. These XLSX byte hashes identify reference files, not numerical equivalence of newly written XLSX zip containers.",
+  "runtime_use": "Documentation only. Extraction does not read this file. Explicit evaluators read separately supplied reference paths.",
+  "cases": [
+    {
+      "building": "A",
+      "sample_id": "193",
+      "reference_identity": "prior isolated B run_topology baseline, lightweight=False",
+      "maps_identity": "configs/building_A.json",
+      "suggested_local_directory": "reference_results/local/193",
+      "files": [
+        {
+          "filename": "debug_roomself.xlsx",
+          "sha256": "28bdd432c0dcbc14ae3a1ea0978f937972c2bf7f3eb4c98caea0b7306e41ef81",
+          "bytes": 5612
+        },
+        {
+          "filename": "debug_topology_edges.xlsx",
+          "sha256": "6baabbe767ed37a49188daf0b2e29f1741e279550ebfce2315cafe78ac6cc924",
+          "bytes": 5195
+        },
+        {
+          "filename": "region_id_map.npy",
+          "sha256": "0f0af035bdc4c6ed2bf0731a8ecff0256856b5d35cf95009c23f43537038fcc3",
+          "bytes": 4716556
+        },
+        {
+          "filename": "debug_topology_result.png",
+          "sha256": "9672c8c0d19365a02ddd757b08368a5e7e4cadacb192db8f64c6df5f6c14d21e",
+          "bytes": 35355
+        },
+        {
+          "filename": "rooms.json",
+          "sha256": "87243e7213e9f756f743d4f2c3437d526c192517cea268479daec53d7f7ae357",
+          "bytes": 993
+        },
+        {
+          "filename": "edges.json",
+          "sha256": "eb558663c132d041469eeb222b2a86b486f75b9176cf11cc689b2bbe931c083a",
+          "bytes": 868
+        },
+        {
+          "filename": "room_stats.json",
+          "sha256": "b928779e11a2ffac383f7e5b5dc2785b92845968c419fd8dfb9a92d6993be9a7",
+          "bytes": 1633
+        }
+      ]
+    },
+    {
+      "building": "B",
+      "sample_id": "11184",
+      "reference_identity": "prior isolated B run_topology baseline, lightweight=False",
+      "maps_identity": "configs/building_B.json",
+      "suggested_local_directory": "reference_results/local/11184",
+      "files": [
+        {
+          "filename": "debug_roomself.xlsx",
+          "sha256": "a4c97776226de4359db56f57b907e4c090c4869d273e71efbaa3d9f00e9947d7",
+          "bytes": 5947
+        },
+        {
+          "filename": "debug_topology_edges.xlsx",
+          "sha256": "0b43baed2005c4840d19afd43bb8b6e91c51060e6208009bb3adef3fcb5143f9",
+          "bytes": 5796
+        },
+        {
+          "filename": "region_id_map.npy",
+          "sha256": "a1428057165dbfdcc143567b623291208d7121983743c634ea5409b83c5fb247",
+          "bytes": 4300064
+        },
+        {
+          "filename": "debug_topology_result.png",
+          "sha256": "3c7b061b5628e250f17cf699167df40bfe983ca97914cf172028a2f24d0e7314",
+          "bytes": 52404
+        },
+        {
+          "filename": "rooms.json",
+          "sha256": "a5ecf57c71ab546f7619058c88ecce6eccdc17a06b34ca8220ca2ef70a0f2dd0",
+          "bytes": 2198
+        },
+        {
+          "filename": "edges.json",
+          "sha256": "902bb76e8cc91c2f600ecee6dce1d731d24c58a91f4c9ca641e812322354662c",
+          "bytes": 2684
+        },
+        {
+          "filename": "room_stats.json",
+          "sha256": "6439a303633d3b9f849a79ea7ae63286e2658f0f4f7a93b9abd94b09f2349642",
+          "bytes": 2097
+        }
+      ]
+    },
+    {
+      "building": "C",
+      "sample_id": "7795",
+      "reference_identity": "prior isolated B run_topology baseline, lightweight=False",
+      "maps_identity": "configs/building_C.json",
+      "suggested_local_directory": "reference_results/local/7795",
+      "files": [
+        {
+          "filename": "debug_roomself.xlsx",
+          "sha256": "351e5cca6f6cac2f18adf2281e8555728838ea2c88adadfa7046620b833e80d3",
+          "bytes": 6682
+        },
+        {
+          "filename": "debug_topology_edges.xlsx",
+          "sha256": "e038dd4cf55bbdfe702c274adf39e0260b593e4cc6037a8e38e0c2e25a41ecfe",
+          "bytes": 6650
+        },
+        {
+          "filename": "region_id_map.npy",
+          "sha256": "3aad0a2043acb63649068e0be2f8dd46720c86f6d8a8caccdad3b296e4aa4afe",
+          "bytes": 11291408
+        },
+        {
+          "filename": "debug_topology_result.png",
+          "sha256": "7f2580daff551b952557189d1b110b94643e0a37d519a7017ea56180e223dcc6",
+          "bytes": 125899
+        },
+        {
+          "filename": "rooms.json",
+          "sha256": "16d434a3a6b0469c157d0201c13b6e709f10238f4e6fa17566ae73beb07d4bdd",
+          "bytes": 4506
+        },
+        {
+          "filename": "edges.json",
+          "sha256": "181c542cb9152bf0d8423ea2f1017e924cab93db3af12c7d75d436d949586e18",
+          "bytes": 6133
+        },
+        {
+          "filename": "room_stats.json",
+          "sha256": "5d2c85e855943753478277609d09703b845fcc2cad1c74aa548ac9d3d4f889b4",
+          "bytes": 3926
+        }
+      ]
+    }
+  ]
+}

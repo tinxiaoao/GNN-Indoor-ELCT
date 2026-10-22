@@ -1,0 +1,23 @@
+{
+  "archive_name": "R1Q6_WI_Confirmed_Reproducible.zip",
+  "archive_sha256": "33215a47777ca560169213c5ba5ba529f82d7a9d1d62b3d2f5dc8e320dbfabf4",
+  "archive_prefix": "R1Q6_WI_Confirmed/",
+  "files": {
+    "inputs/archived_C1_predictions.npz": "c5e699add1f33c4ff2f5c30b6a695b6429945c4390d4780f86bcadaec9e95885",
+    "inputs/C1_forward_predictions.npz": "456873a3dcbf59e7357e34e267defae399fdf0a710d2d29c08c9df674cb7c4ba",
+    "inputs/C4_user_reference.txt": "d43572f721c9db993e2ad140b43ef471048aee2111e78fdf6b14f63b5f687e34",
+    "inputs/geometry_rebuild_check.json": "faf7402c6fe03fa0d91f7eea24ac5d4c2fb9b209e24df2e8071c1c7a0cca9bfb",
+    "inputs/link_features_confirmed.npz": "1d05ac6fc2592be1dfc192201a5b3fe17c2ae7cc943bf469158d7eb8006f157f",
+    "inputs/recovery_config.json": "c6b60ed733ae2a84c2e00b823639b2a86f6ebce1d5ac72e278702df25ffc5153",
+    "inputs/reference_and_proposed.npz": "3027c882df8d5c1a13a1b4e46f17b08199c1262e40d325bcb070217661e51052",
+    "inputs/references.csv": "4c960a5ca0124fa749950c2e8f8902c1de132a9038ad3162cf68854c08dc6906",
+    "inputs/source.svg": "7868dbc671ca1dfeeb107a85117c0480063518aa77401de9ffb5c7e48e4fd9cc"
+  },
+  "not_redistributed": [
+    "inputs/source.svg",
+    "inputs/link_features_confirmed.npz",
+    "inputs/C1_forward_predictions.npz",
+    "inputs/geometry_rebuild_check.json"
+  ],
+  "reason": "The handoff does not supply a redistribution license for the floor-plan SVG or derived geometry assets. Obtain authorized local access before preparation."
+}

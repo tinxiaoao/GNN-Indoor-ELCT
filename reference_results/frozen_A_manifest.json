@@ -1,0 +1,35 @@
+{
+  "status": "Frozen original A retained separately; not a runtime dependency. No original absolute paths or hardcoded batch entry published.",
+  "files": [
+    {
+      "source_identity": "original_A",
+      "filename": "main.py",
+      "sha256": "4b69e8682567277bc307ed7ab8b49950b6c51c03066c429dac15a8fa0e18265a"
+    },
+    {
+      "source_identity": "original_A",
+      "filename": "debug_topology.py",
+      "sha256": "9806e4acf35826862cd8c2081a39e11ec3ace572a6f8b463b4ab5d1f3830efa1"
+    },
+    {
+      "source_identity": "original_A",
+      "filename": "extract_rooms.py",
+      "sha256": "34f46aea4f6f8a0662ce31b30bf5384cf8151cb799a43471362378f960933450"
+    },
+    {
+      "source_identity": "original_A",
+      "filename": "detect_adjacency.py",
+      "sha256": "40fb60ee514632e3c822529346e8de60831adb4bfc281d8a678926b259e248c8"
+    },
+    {
+      "source_identity": "original_A",
+      "filename": "exterior_wall.py",
+      "sha256": "2d5e9e9ad85910a44df88e2bddfdc0a6fe5ccd07c33ef46351800410d475e17e"
+    },
+    {
+      "source_identity": "original_A",
+      "filename": "save_topology_image.py",
+      "sha256": "2e961047c364731b6c49514af9f5ab6668acd4b2165c8359ff5a3aa1217e1663"
+    }
+  ]
+}

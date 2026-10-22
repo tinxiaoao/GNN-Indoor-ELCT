@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "area": 10200,
+    "perimeter": 820,
+    "room_type": "Kitchen",
+    "centroid_y": 79.5,
+    "centroid_x": 62.0,
+    "bbox_ymin": 20,
+    "bbox_xmin": 20,
+    "bbox_ymax": 139,
+    "bbox_xmax": 104
+  },
+  {
+    "id": 2,
+    "area": 10200,
+    "perimeter": 820,
+    "room_type": "Living Room",
+    "centroid_y": 79.5,
+    "centroid_x": 157.0,
+    "bbox_ymin": 20,
+    "bbox_xmin": 115,
+    "bbox_ymax": 139,
+    "bbox_xmax": 199
+  }
+]
