@@ -25,8 +25,9 @@
   tolerance and S3–S5 checks, but fixed Proposed values were not regenerated.
   WI software was not run. Room-18 geometric-center and receiver-grid coordinates
   are not independently matched to WI coordinate export.
-* **Environment installation:** isolated local dependency copies passed;
-  a fresh online installation remains unverified after a download hash failure.
+* **Environment installation:** a fresh Python 3.11 virtual environment passed
+  the standard online installation of the pinned translator requirements and
+  editable package.
 * **Third-party materials:** CubiCasa5K-derived extraction outputs are included
   under the original CC BY-NC 4.0 terms; attribution is retained in
   [third_party/README.md](../third_party/README.md). VecFloorSeg source, model
