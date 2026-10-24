@@ -1,5 +1,5 @@
 {
-  "note": "Two distinct saved input families. Table S2 unique source/run/evaluator binding is unconfirmed. Clean slots are explicit repeated maps.",
+  "note": "Two preserved input families. Part B uses reference_faithful; clean slots repeat the same unperturbed maps.",
   "cases": [
     {
       "name": "clean_193",

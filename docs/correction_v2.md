@@ -7,7 +7,7 @@ python -m geo_elct extract --config <local-config>/building_A.json --mode correc
 python -m geo_elct extract --wall <wall.png> --icon <icon.png> --rough <background.png> --source-type annotation_derived --mode correction_v2 --out <new-v2-run>
 ```
 
-The opening implementation reads `geo_elct/correction_v2.py::CONFIG`; inherited preprocessing/validation routines still read their frozen `self_correction.REFERENCE_FREE_CONFIG` values. The corresponding groups in V2's dictionary are identity snapshots, not separate overrides. `correction_v2_effective_config.json` is generated documentation, **not** a new user parameter override interface. Each actual run records the effective dictionary and the versioned module hash. The frozen numerical dependencies retain their old hashes. No MATLAB code or setting is changed.
+The opening implementation reads `geo_elct/correction_v2.py::CONFIG`; inherited preprocessing/validation routines still read their frozen `self_correction.REFERENCE_FREE_CONFIG` values. The corresponding groups in V2's dictionary are identity snapshots, not separate overrides. `correction_v2_effective_config.json` is generated documentation, **not** a new user parameter override interface. Each actual run records the effective dictionary and the versioned module hash. The opening-correction module retains its hash; extraction dispatch separately records the opening-aggregation revision. No MATLAB code or setting is changed.
 
 ## Exterior evidence and orientation
 
@@ -15,7 +15,7 @@ The qualified background mask consists only of labels `{0,1,8,50}` connected to 
 
 For every occupied longitudinal scanline of a candidate opening, require a nonempty contiguous wall interval under that opening. Probe in opposite normal directions, through at most two additional wall pixels on each side, to a room instance, qualified background, or image exit. Every scanline must yield the same ordered pair of distinct domains, with at least one indoor room. Reject a locally observed third room in the 2 px neighborhood as ambiguous. Isolated components use their bounding-box long axis; square components remain unresolved. Completion proposals derive their axis from the two fragments' identical cross-wall extents and gap location, then validate both pieces and their union along that axis. This avoids the aspect-ratio inversion failure when deletion makes each fragment shorter than the wall thickness.
 
-This changes opening-host validation only. The original extractor still treats its excluded nonwall labels as outside in its rays and retains its original bounds and table aggregation. The new qualification does not silently rewrite that baseline behavior; questionable retained components appear in diagnostics. Border-connected background can still reflect incorrect input annotation connectivity, so the local rule is not a proof of physical exterior geometry.
+This changes opening-host validation only. The extractor still treats its excluded nonwall labels as outside in its rays and retains its original search bounds. Internal opening dimension aggregation is a separate choice (`by_thickness_v1` or `legacy_width_sum`); it does not alter the correction rules. Questionable retained components appear in diagnostics. Border-connected background can still reflect incorrect input annotation connectivity, so the local rule is not a proof of physical exterior geometry.
 
 ## Explicit actions
 

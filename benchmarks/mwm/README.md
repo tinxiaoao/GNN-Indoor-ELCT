@@ -1,38 +1,27 @@
-# Part C MWM benchmark
+# MWM calibration and evaluation
 
-See [the Part C reproduction guide](../../docs/part_c.md) for scope, validation,
-and limitations. The three files under `code/` are unchanged from the confirmed
-handoff package. `manifest.json` records that package's historical source hashes
-and environment, rather than the environment used for this release check.
+The deployments are C-1 = [1], C-2 = [1,2], C-3 = [1,2,4] and C-4 = [1,2,4,8],
+evaluated at 2.4, 5 and 28 GHz. Install `environments/mwm-requirements.txt` in a
+separate Python environment.
 
-The `inputs/` and `results/` files are **frozen references**, not outputs of a new
-run. Full precision is retained. The SVG and derived geometry arrays are omitted
-because their redistribution permission is not established by the handoff.
-Obtain authorized local access to the exact source package; its SHA256 is fixed
-in `external_inputs.json`. This candidate supplies no download URL or WI software.
+Prepare an authorized input directory using [the input schema](input_schema.md).
+It requires actual WI Tx/Rx coordinates and received-power exports, the source
+SVG and matching Proposed room ARPs. The supplied configuration template needs
+the verified Room-8 inputs before a calculation can run.
 
-From the release root, using a separate MWM Python environment:
+From the repository root:
 
 ```text
-python benchmarks/mwm/verify_results.py
-python benchmarks/mwm/prepare_inputs.py --source-package "path/to/R1Q6_WI_Confirmed_Reproducible.zip" --output "runs/part-c-inputs"
-python benchmarks/mwm/run.py --inputs "runs/part-c-inputs" --output "runs/part-c-calculation"
-python benchmarks/mwm/verify_results.py --results "runs/part-c-calculation/replayed/results.npz"
+python benchmarks/mwm/run.py --inputs "path/to/verified-C4-inputs" --validate-only
+python benchmarks/mwm/run.py --inputs "path/to/verified-C4-inputs" --output "path/outside/repository/new-mwm-run"
+python benchmarks/mwm/verify_results.py --results "path/outside/repository/new-mwm-run"
 ```
 
-Choose new directories for every preparation and calculation. `run.py` copies
-the local inputs, reference results and original code into a new working root.
-The original calculation rebuilds SVG-derived inputs inside that disposable
-root, writes new predictions to `replayed/`, and compares with frozen references.
-It preserves the three C-1 parameter sets and recalibrates the other nine sets.
+Each run uses the exported receiver positions and writes a new directory with
+parameters, full-precision references, room predictions and three 4×4 MAE
+matrices. MAE averages all eighteen rooms. `best_observed_vs_proposed.csv`
+excludes the diagonal for Table S5; `best_including_diagonal_vs_proposed.csv`
+includes it for Table R3. Both use the same full-precision Proposed room data.
 
-Running `code/recalculate.py --root benchmarks/mwm` directly is unsuitable for
-this curated candidate: the geometry asset is deliberately external, and that
-original entry rewrites derived inputs. Use the wrapper above.
-
-`verify_results.py` without `--results` only checks arithmetic of saved
-references. Passing the new `replayed/results.npz` checks a fresh calculation.
-No command here runs Wireless InSite or recomputes the saved Proposed model.
-
-Code and author-generated numerical data require the author's release-license
-confirmation. No license is granted to third-party geometry by this package.
+The [Rooms 1,2,4,18 archive](../../archives/mwm_rooms_1_2_4_18/README.md)
+contains the earlier numerical baseline and its explicit replay commands.

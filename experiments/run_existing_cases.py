@@ -53,7 +53,10 @@ def read_cases(manifest: Path) -> list[dict]:
     return cases
 
 
-def run_cases(manifest: Path, out: Path, python: str = sys.executable) -> dict:
+def run_cases(manifest: Path, out: Path, python: str = sys.executable,
+              opening_aggregation: str = "by_thickness_v1") -> dict:
+    if opening_aggregation not in ("by_thickness_v1", "legacy_width_sum"):
+        raise ValueError("Unknown opening aggregation")
     manifest, out = manifest.resolve(), out.resolve()
     cases = read_cases(manifest)
     # Protect all previous output, including user edits and incomplete runs.
@@ -67,6 +70,7 @@ def run_cases(manifest: Path, out: Path, python: str = sys.executable) -> dict:
         for mode in case["modes"]:
             run = out / "runs" / case["name"] / mode
             command = [python, "-B", "-m", "geo_elct", "extract", "--mode", mode,
+                       "--opening-aggregation", opening_aggregation,
                        "--source-type", case.get("source_type", "unknown")]
             for field in ("wall", "icon", "rough"):
                 path = Path(case["resolved_inputs"][field])
@@ -89,6 +93,7 @@ def run_cases(manifest: Path, out: Path, python: str = sys.executable) -> dict:
             (out / "commands.json").write_text(json.dumps(records, indent=2), encoding="utf-8")
             print(json.dumps({k: record[k] for k in ("case", "mode", "returncode", "elapsed_seconds")}), flush=True)
     report = {"manifest_sha256": sha256(manifest), "case_count": len(cases),
+              "opening_aggregation": opening_aggregation,
               "execution_count": len(records),
               "execution_success_count": sum(row["returncode"] == 0 for row in records),
               "interpretation": "Process exit success is not a geometry, topology, or table correctness result.",
@@ -102,8 +107,10 @@ def main() -> int:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--python", default=sys.executable)
+    parser.add_argument("--opening-aggregation", choices=("by_thickness_v1", "legacy_width_sum"),
+                        default="by_thickness_v1")
     args = parser.parse_args()
-    result = run_cases(args.manifest, args.out, args.python)
+    result = run_cases(args.manifest, args.out, args.python, args.opening_aggregation)
     return 0 if result["execution_count"] == result["execution_success_count"] else 1
 
 

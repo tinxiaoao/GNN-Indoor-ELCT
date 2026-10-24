@@ -1,0 +1,237 @@
+{
+  "sample_id": "7795",
+  "source_type": "annotation_derived",
+  "generator": "experiments.perturbations.generate_reference_faithful_perturbations",
+  "levels": [
+    "clean",
+    "mild",
+    "moderate",
+    "severe"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "random_seed_formula": "41000 + seed + 1000 * level_index; clean=0, mild=1, moderate=2, severe=3",
+  "correction_modes": [
+    "none",
+    "correction_v2"
+  ],
+  "opening_aggregation": "by_thickness_v1",
+  "fixed_inputs": "part_b_inputs.json",
+  "parameter_ranges": {
+    "clean": {
+      "fragment_count": [
+        0,
+        0
+      ],
+      "fragment_area_px": [
+        0,
+        0
+      ],
+      "wall_gap_count": [
+        0,
+        0
+      ],
+      "wall_gap_length_px": [
+        0,
+        0
+      ],
+      "boundary_count": [
+        0,
+        0
+      ],
+      "boundary_span_px": [
+        0,
+        0
+      ],
+      "boundary_displacement_px": [
+        0,
+        0
+      ],
+      "door_shift_count": [
+        0,
+        0
+      ],
+      "window_shift_count": [
+        0,
+        0
+      ],
+      "opening_shift_px": [
+        0,
+        0
+      ],
+      "partial_delete_count": [
+        0,
+        0
+      ],
+      "partial_delete_gap_px": [
+        0,
+        0
+      ],
+      "interpretation": "Unmodified clean maps.",
+      "strict_target": "Exact clean reproduction."
+    },
+    "mild": {
+      "fragment_count": [
+        1,
+        1
+      ],
+      "fragment_area_px": [
+        3,
+        5
+      ],
+      "wall_gap_count": [
+        1,
+        1
+      ],
+      "wall_gap_length_px": [
+        2,
+        2
+      ],
+      "boundary_count": [
+        1,
+        1
+      ],
+      "boundary_span_px": [
+        6,
+        8
+      ],
+      "boundary_displacement_px": [
+        1,
+        1
+      ],
+      "door_shift_count": [
+        1,
+        1
+      ],
+      "window_shift_count": [
+        0,
+        1
+      ],
+      "opening_shift_px": [
+        1,
+        1
+      ],
+      "partial_delete_count": [
+        1,
+        1
+      ],
+      "partial_delete_gap_px": [
+        1,
+        1
+      ],
+      "interpretation": "Light, uniquely inferable local artifacts.",
+      "strict_target": "Reference-free recovery to the clean room and edge tables."
+    },
+    "moderate": {
+      "fragment_count": [
+        2,
+        3
+      ],
+      "fragment_area_px": [
+        4,
+        9
+      ],
+      "wall_gap_count": [
+        2,
+        2
+      ],
+      "wall_gap_length_px": [
+        3,
+        4
+      ],
+      "boundary_count": [
+        2,
+        2
+      ],
+      "boundary_span_px": [
+        8,
+        12
+      ],
+      "boundary_displacement_px": [
+        1,
+        1
+      ],
+      "door_shift_count": [
+        1,
+        1
+      ],
+      "window_shift_count": [
+        1,
+        1
+      ],
+      "opening_shift_px": [
+        2,
+        2
+      ],
+      "partial_delete_count": [
+        2,
+        2
+      ],
+      "partial_delete_gap_px": [
+        2,
+        3
+      ],
+      "interpretation": "Moderate, still locally inferable artifacts.",
+      "strict_target": "Reference-free recovery to the clean room and edge tables."
+    },
+    "severe": {
+      "fragment_count": [
+        4,
+        6
+      ],
+      "fragment_area_px": [
+        6,
+        16
+      ],
+      "wall_gap_count": [
+        3,
+        3
+      ],
+      "wall_gap_length_px": [
+        5,
+        6
+      ],
+      "boundary_count": [
+        3,
+        3
+      ],
+      "boundary_span_px": [
+        12,
+        18
+      ],
+      "boundary_displacement_px": [
+        1,
+        1
+      ],
+      "door_shift_count": [
+        1,
+        2
+      ],
+      "window_shift_count": [
+        1,
+        2
+      ],
+      "opening_shift_px": [
+        3,
+        3
+      ],
+      "partial_delete_count": [
+        2,
+        3
+      ],
+      "partial_delete_gap_px": [
+        3,
+        4
+      ],
+      "interpretation": "Strong local artifacts; no complete wall or opening deletion and no forced room merge.",
+      "strict_target": "Topology recovery is primary; any non-exact geometric fields are reported honestly."
+    }
+  },
+  "topology_matching": "Equal room count, complete one-to-one room matching by mask IoU >= 0.5, identical unordered room-pair and connection-type sets; Count and geometry are evaluated separately.",
+  "clean_repeats": "Five executions of the same unperturbed map pair per correction mode."
+}

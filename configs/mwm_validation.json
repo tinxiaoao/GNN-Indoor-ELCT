@@ -1,5 +1,5 @@
 {
-  "purpose": "Supplementary Material Part C fixed validation",
+  "purpose": "MWM calibration and cross-configuration evaluation",
   "frequency_GHz": [
     2.4,
     5.0,
@@ -18,16 +18,16 @@
       2,
       4
     ],
-    "C-4v": [
+    "C-4": [
       1,
       2,
       4,
-      18
+      8
     ]
   },
   "numerical_configuration": "../benchmarks/mwm/inputs/recovery_config.json",
-  "Room18_Tx_position_basis": "Archived geometric centroid, not independently matched to the exact WI transmitter-coordinate export",
+  "input_schema": "../benchmarks/mwm/input_schema.md",
+  "validation_status": "missing_verified_room8_inputs",
   "WI_execution": false,
-  "room_MAE_denominator": 18,
-  "full_recalculation_requires": "Authorized local inputs prepared from the hash-verified confirmed source package"
+  "room_MAE_denominator": 18
 }

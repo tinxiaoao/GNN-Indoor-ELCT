@@ -1,56 +1,70 @@
-# Part B perturbations and recovery evaluation
+# Part B perturbations and topology matching
 
-Two existing generation families are packaged under `experiments/perturbations/`.
-Their numerical functions/settings/randomness are preserved; only package
-imports, development-path removal and rejection of existing output roots were
-added. `settings.json` records the original fixed intensity ranges and seed
-rules; [generator instructions](../experiments/perturbations/README.md) give the
-actual distinct CLI flags.
+Part B uses Building C, CubiCasa5K sample 7795, with the
+`generate_reference_faithful_perturbations` protocol. The input maps are
+annotation-derived. All four levels use seeds 0, 1, 2, 3 and 4; Clean repeats
+the same unperturbed maps. Seed 2 provides the existing illustrated examples.
+[The protocol](../experiments/part_b_protocol.json) and
+[all 20 fixed inputs](../experiments/part_b_inputs.json) specify the settings
+and original input hashes.
 
-The legacy family uses boundary-pixel deletion (3–5%, 5–10%, 15–20% by level).
-The reference-faithful family deletes an internal full-thickness strip (1,
-2–3, 3–4 px by level), with different seed transformation and local defect
-settings. Both use seeds 0–4. They must not share a result label merely because
-level and seed strings match. No alternate seed or favorable input was selected
-to establish a five-trial rate here.
+The table gives inclusive sampling ranges. Counts are per map; fragment area
+is in px² and all other dimensions are in px.
 
-`experiments/fixed_inputs.json` binds all 43 located historical identities to
-exact local project-relative input files and SHA256: three clean buildings and
-20 slots per family. Each family's five clean slots are explicit repeated
-inputs, not five independent clean buildings. The clean maps are annotation-
-derived. Images/backgrounds are excluded pending redistribution permission.
+| Perturbation | Mild | Moderate | Severe |
+| --- | --- | --- | --- |
+| Enclosed fragments: count; area each | 1; 3–5 | 2–3; 4–9 | 4–6; 6–16 |
+| Wall gaps: count; length each | 1; 2 | 2; 3–4 | 3; 5–6 |
+| Boundary displacements: count; span; displacement | 1; 6–8; 1 | 2; 8–12; 1 | 3; 12–18; 1 |
+| Shifted doors: count; displacement | 1; 1 | 1; 2 | 1–2; 3 |
+| Shifted windows: count; displacement | 0–1; 1 | 1; 2 | 1–2; 3 |
+| Partially deleted openings: count; strip length | 1; 1 | 2; 2–3 | 2–3; 3–4 |
+
+Partial deletion removes an internal strip through the opening thickness,
+leaving both ends visible. The generator selects geometrically eligible
+candidates. All requested injections succeeded for the five fixed seeds.
+The sampled values need not reach every endpoint of a range.
+
+Use a new output directory for every command. To prepare the saved inputs
+from an existing local source tree containing the manifest-listed `code/`
+paths, then execute all 40 cases:
 
 ```powershell
-python scripts/prepare_fixed_inputs.py --source-root "path/to/authorized-original-tree" --out local/fixed
-python -m experiments.run_existing_cases --manifest local/fixed/cases.json --out runs/fixed-batch
-python -m experiments.compare_outputs --reference "path/to/clean-computed-output" --candidate "path/to/new-perturbed-output" --out runs/fixed-evaluation
+python scripts/prepare_fixed_inputs.py --source-root "path/to/local-source-tree" --manifest experiments/part_b_inputs.json --out local/part-b-inputs
+python -m experiments.run_existing_cases --manifest local/part-b-inputs/cases.json --opening-aggregation by_thickness_v1 --out runs/part-b
 ```
 
-The preparation script verifies every file before copying. Its source root is
-used only to acquire input data, never to import original modules. The extractor
-uses copied run-local maps and accepts no reference result. Clean maps may be
-used to construct perturbations and independently evaluate them; no repair
-function reads a clean map, perturbation manifest or saved answer.
+To generate maps from a clean pair using the same protocol instead:
 
-Report legacy relation, strict room/type/internal pair/type/Count topology,
-full room-table equality, full edge-table equality and pixel restoration
-separately. Full comparison uses mask-IoU room correspondence and checks raw
-IDs, complete workbook cells and exterior walls/openings. Integer/category
-fields and preserved Geo float values are compared exactly (absolute tolerance
-0), not relaxed after failures. A successful command is not topology recovery.
+```powershell
+python -B -m experiments.perturbations.generate_reference_faithful_perturbations --wall "path/to/wall_svg.png" --icon "path/to/icon_svg.png" --out local/part-b-generated --seeds 0 1 2 3 4
+```
 
-This preparation reran clean A/B/C and the fixed legacy Mild seed 0 and
-reference-faithful Severe seed 4 under both `none` and `correction_v2` (10 new
-extractions). All ten match historical algorithm-specific reference outputs
-exactly. Comparisons against clean geometry remain separate: the v2 examples
-preserve/restore both tables; `none` on perturbed inputs may not. Neither full
-generator family nor the complete five-seed aggregate was recomputed. Saved
-v2 history includes failures in the legacy family; it is not relabeled as a
-fresh 5/5 result.
+Extract each generated pair with explicit `--mode none` or
+`--mode correction_v2` and `--opening-aggregation by_thickness_v1`. Correction
+uses only its input maps and fixed implementation parameters; it does not read
+the Clean maps, generation manifests, defect locations or reference results.
 
-Supplementary B.2/Table S1 calls its inputs GNN segmentation outputs; the
-located maps have annotation provenance. Table S2 gives 5/5 mild and 0/5
-moderate/severe without correction and 5/5 with correction, but a unique
-source/run/mode/evaluator binding is not established by the located records.
-These claims are **not newly reproduced**. Preserve the supplied document and
-resolve the binding with the author rather than substituting metrics or data.
+Topology matching requires equal room count, complete spatial room matching
+with mask IoU ≥ 0.5, and identical unordered room-pair/connection-type sets.
+The evaluator reports Count, room types and complete table equality separately.
+For example:
+
+```powershell
+python -m experiments.evaluate_topology --reference runs/part-b/runs/reference_faithful_clean_0/none --candidate runs/part-b/runs/reference_faithful_severe_2/correction_v2 --out runs/part-b-severe-2-evaluation
+```
+
+| Condition | Without correction | With `correction_v2` |
+| --- | --- | --- |
+| Clean | 5/5 | 5/5 |
+| Mild | 0/5 | 5/5 |
+| Moderate | 0/5 | 5/5 |
+| Severe | 0/5 | 5/5 |
+
+These results use all 40 executions with `by_thickness_v1`. Complete canonical
+room and interface tables also equal Clean for every corrected case in this
+batch. The five Clean trials repeat one map pair and are not five buildings.
+
+The separate `perturb_segmentation_maps` generator is retained for other
+experiments. Its endpoint pixel deletion and intensity ranges differ from
+this Part B protocol; do not substitute its maps or combine their results.

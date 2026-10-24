@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Numerical MWM core for the confirmed WI validation configurations.
+"""MWM forward equations and fixed multistart fitting for verified inputs.
 
-C-1 parameters and all 216 C-1-source room predictions are retained from the
-source workbook archive, after forward reproduction is verified.
-Only nine new parameter fits are used in the main results.
-Historical optimizer settings are unavailable. The numerical settings below
-are explicit new settings, not claimed to be recovered historical settings.
+The formal runner validates transmitter locations, actual receiver samples and
+room references before constructing this model. The equations, objective,
+constraints, derivatives and start-selection rules are preserved.
 """
 from __future__ import annotations
 import argparse, csv, hashlib, json, platform, time
@@ -40,7 +38,7 @@ class OriginalSVGMWM:
             self.freqs=z["frequency_GHz"].copy()
         with np.load(folder/"link_features_confirmed.npz",allow_pickle=False) as z:
             self.room_features=[z[f"room{r}_features"].copy() for r in range(1,19)]
-        self.theta_C1=np.asarray(self.cfg["C1_parameters"],float)
+        self.theta_C1=None
         if self.targets.shape!=(3,4,18) or not np.isfinite(self.targets).all():
             raise ValueError("Invalid reference layout")
         chunks=[]; lengths=[]

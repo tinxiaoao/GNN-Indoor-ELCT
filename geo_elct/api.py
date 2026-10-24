@@ -2,6 +2,7 @@
 from __future__ import annotations
 import copy, hashlib, importlib.metadata, json, os, shutil, sys, time, tempfile
 from pathlib import Path
+from . import DEFAULT_OPENING_AGGREGATION, OPENING_AGGREGATIONS
 
 PACKAGE = Path(__file__).resolve().parent
 MODES = ("none", "legacy_revised", "reference_faithful", "correction_v2")
@@ -33,7 +34,7 @@ def load_case(path):
     if config.get("schema_version") != 1:
         raise ValueError("Expected case schema_version=1")
     extraction = config.get("extraction", {})
-    unsupported = set(extraction) - {"mode", "lightweight"}
+    unsupported = set(extraction) - {"mode", "lightweight", "opening_aggregation"}
     if unsupported:
         raise ValueError(f"Numerical overrides are not supported: {sorted(unsupported)}")
     if extraction.get("lightweight", False) is not False:
@@ -41,6 +42,9 @@ def load_case(path):
     mode = extraction.get("mode", "none")
     if mode not in MODES:
         raise ValueError(f"Unknown correction identity: {mode}")
+    opening_aggregation = extraction.get("opening_aggregation", DEFAULT_OPENING_AGGREGATION)
+    if opening_aggregation not in OPENING_AGGREGATIONS:
+        raise ValueError(f"Unknown opening aggregation: {opening_aggregation}")
     maps = {}
     for name in ("wall", "icon", "rough"):
         spec = config["maps"][name]
@@ -53,12 +57,16 @@ def load_case(path):
     if (maps["wall"] == maps["icon"]):
         raise ValueError("Wall and icon maps must be supplied separately")
     return {"config":config, "config_sha256":sha256(path), "wall":maps["wall"], "icon":maps["icon"], "rough":maps["rough"], "mode":mode,
+            "opening_aggregation":opening_aggregation,
             "out":(path.parent/config["outputs"]["directory"]).resolve(), "source_type":config.get("input_source_type", "unknown")}
 
-def extract(wall, icon, rough, out, *, mode="none", source_type="unknown", case_metadata=None):
+def extract(wall, icon, rough, out, *, mode="none", source_type="unknown", case_metadata=None,
+            opening_aggregation=DEFAULT_OPENING_AGGREGATION):
     """Run exactly one selected correction pipeline. No reference-data argument exists."""
     if mode not in MODES:
         raise ValueError(f"mode must be one of {MODES}")
+    if opening_aggregation not in OPENING_AGGREGATIONS:
+        raise ValueError(f"opening_aggregation must be one of {OPENING_AGGREGATIONS}")
     if source_type not in {"unknown", "annotation_derived", "model_prediction"}:
         raise ValueError("Invalid declared source type")
     source_records = verify_source_manifest()
@@ -115,7 +123,8 @@ def extract(wall, icon, rough, out, *, mode="none", source_type="unknown", case_
     else:
         identity="B.debug_topology.run_topology baseline; no correction"
         parameters={}
-    summary=core.run_topology(str(corrected_wall),str(corrected_icon),str(local["rough"]),str(out),correction_mode=numerical_mode,lightweight=False)
+    summary=core.run_topology(str(corrected_wall),str(corrected_icon),str(local["rough"]),str(out),correction_mode=numerical_mode,lightweight=False,
+                              opening_aggregation=opening_aggregation)
     runtime=independent.reference_free_runtime_validation(out)
     write_json(out/"runtime_validation.json",runtime)
     v2_diagnostics = None
@@ -138,6 +147,7 @@ def extract(wall, icon, rough, out, *, mode="none", source_type="unknown", case_
                     raise RuntimeError(f"Unexpected project module location: {name}")
                 loaded.append({"module":name,"package_file":resolved.relative_to(PACKAGE.parent).as_posix(),"sha256":sha256(resolved)})
     metadata={"schema_version":1,"mode":mode,"algorithm_identity":identity,"extractor_correction_mode":numerical_mode,
+              "opening_aggregation":opening_aggregation,
               "independent_correction_mode":FULL if mode=="reference_faithful" else None,"lightweight":False,
               "parameters_read_from_implementation":parameters,"excluded_room_labels":sorted(ROOM_EXCLUDE_LABELS),
               "fixed_extraction_rules":{"source":"geo_elct/extract_rooms.py; detect_adjacency.py; exterior_wall.py", "internal_search":"round(min(perimeter/10)); original stopping rule", "external_search":"last enumerated room perimeter/10; original stopping rule", "room_enumeration":"ascending semantic labels then 8-connected component order", "units":"length px; area px^2"},

@@ -1,8 +1,8 @@
 # Known issues preserved in this candidate
 
-Version note: the historical modes below remain byte-for-byte in their numerical implementations. The separately selected `correction_v2` addresses the opening changes described in [v2 rules](correction_v2.md); its actual preservation, unresolved cases and failures are in [v2 results](known_limitations.md). The original issues and earlier results below are retained, not silently relabeled as repaired historical results. MATLAB is unchanged.
+Version note: segmentation correction rules and thresholds remain unchanged. The separately selected `correction_v2` addresses the opening changes described in [v2 rules](correction_v2.md); its actual preservation, unresolved cases and failures are in [v2 results](known_limitations.md). Internal opening dimension aggregation is independently versioned as described in K07. The original issues and earlier results below are retained. MATLAB is unchanged.
 
-This candidate preserves the selected source behavior. Migration equivalence means that the packaged implementation reproduces its source implementation on the same input. It does **not** establish that correction preserves correct geometry, that runtime validation detects every defect, or that all publication results have been reproduced. No numerical fix below is included in this release candidate.
+Migration equivalence means that a selected implementation reproduces its source implementation on the same input. It does **not** establish that correction preserves correct geometry, that runtime validation detects every defect, or that all publication results have been reproduced. The `by_thickness_v1` aggregation is an explicit numerical revision; archived outputs are retained unchanged.
 
 ## K01 — Correction deletes exterior windows on clean inputs
 
@@ -47,12 +47,28 @@ The preserved active MATLAB settings use C's pixel scale, C-4 transmitter rows, 
 - Legacy `topology_relation_preserved`: requires room-count equality, no isolated rooms, untyped pair F1=1 and wall-edge F1=1. It does not require every door/window/open-space type or exported `Count` to match.
 - Strict `topology_exact`: compares spatially matched room sets/types and internal `(RoomA, RoomB, ConnectionType) -> Count`. Exterior geometry remains outside this metric.
 - Strict `room_table_exact` and `edge_table_exact`: separately compare full normalized records. Both are needed for “two tables exact”; runtime validity or topology exact cannot replace either result.
+- Part B `topology_matching`: requires equal room count, complete spatial room correspondence and identical unordered room-pair/type sets. Count and geometry equality are separate results.
 
-These names and outputs remain separate. The two retained representative perturbations are fixed existing inputs; they are not a fresh estimate of five-seed recovery rates.
+These definitions remain separate. The current [Part B protocol](part_b.md) executes all 40 combinations of four levels, seeds 0–4, and `none`/`correction_v2`, with explicit `by_thickness_v1` aggregation.
 
-## K07 — Extraction/export conventions remain frozen
+## K07 — Extraction limits and versioned opening aggregation
 
-Internal wall search uses the minimum extracted morphological perimeter divided by ten. Exterior search uses the perimeter divided by ten of the **last** traversed room. The 64 px diagnostic bound is not a common extraction bound. Opening aggregation and export `Count` retain their original meaning: exported segment slots, not an independently verified count of physical door/window leaves. These conventions must not be silently normalized during later cleanup.
+Room perimeter remains the pixel count of the 3×3 morphological gradient.
+Internal wall search rounds the minimum perimeter divided by ten; exterior
+search uses the perimeter divided by ten of the **last** traversed room.
+The 64 px diagnostic bound is not a common extraction bound. These search
+limits and all segmentation correction thresholds remain unchanged.
+
+The default `by_thickness_v1` internal door/window aggregation groups by room
+pair, interface type and thickness, sums lengths, and preserves each group's
+thickness. `--opening-aggregation legacy_width_sum` retains the historical
+sum of thicknesses for explicit reproduction. This choice is independent of
+the segmentation correction mode and is recorded in run metadata and source
+provenance. Exterior grouping already retained thickness and is unchanged.
+Workbook `Count` denotes exported dimension records; raw edge `num` denotes
+the raster component count in an opening group. Neither is a verified count
+of physical door/window leaves. Archived dataset and reference tables have
+not been replaced with newly aggregated outputs.
 
 ## K08 — MATLAB singleton frequency dimension fails in the original and candidate
 

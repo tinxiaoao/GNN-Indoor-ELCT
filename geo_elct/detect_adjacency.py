@@ -2,6 +2,8 @@ import numpy as np
 import cv2
 from typing import List, Dict, Tuple, Set
 
+from . import DEFAULT_OPENING_AGGREGATION, OPENING_AGGREGATIONS
+
 """
 detect_adjacency.py  ‑ 统一室内拓扑提取模块
 ------------------------------------------------
@@ -165,8 +167,12 @@ def detect_adjacency(region_id_map: np.ndarray,
                      wall_array: np.ndarray,
                      icon_array: np.ndarray,
                      wall_label_array: np.ndarray,
-                     max_wall_thickness: float) -> List[Dict]:
+                     max_wall_thickness: float,
+                     *, opening_aggregation: str = DEFAULT_OPENING_AGGREGATION) -> List[Dict]:
     """主入口: 返回门/窗/墙/开敞连接的列表"""
+
+    if opening_aggregation not in OPENING_AGGREGATIONS:
+        raise ValueError(f"Unknown opening aggregation: {opening_aggregation}")
 
     region_id_map = region_id_map.astype(np.int32)
     wall_array = wall_array.astype(np.uint8)
@@ -177,14 +183,13 @@ def detect_adjacency(region_id_map: np.ndarray,
 
     # -------------------- 1️⃣ 门 / 窗 --------------------
     def _detect_icon_edges(mask: np.ndarray, icon_type: str):
-        """聚合同一房间对的多个门/窗连通块 → 单条记录
-        统计字段:
-            num      : 连通块数量 (扇数)
-            length   : 所有连通块 length 总和 (长边像素)
-            width    : 所有连通块 width  总和 (厚边像素)
-        若后续需要平均或最大值, 可在此处修改聚合策略。"""
+        """Group components by room pair, type and thickness; sum length only.
+
+        ``num`` counts raster components in each group. ``legacy_width_sum``
+        explicitly reproduces the historical sum of both length and width.
+        """
         n_lbl, lbl_map = cv2.connectedComponents(mask, connectivity=4)
-        agg: Dict[Tuple[int, int], Dict[str, int]] = {}
+        agg: Dict[Tuple[int, int, str, int], Dict[str, int]] = {}
         for lbl in range(1, n_lbl):
             ys, xs = np.where(lbl_map == lbl)
             if ys.size == 0:
@@ -204,15 +209,19 @@ def detect_adjacency(region_id_map: np.ndarray,
             width = xs.max() - xs.min() + 1
             length = max(height, width)
             thick = min(height, width)
-            key = (a, b, icon_type)
+            group_thickness = int(thick) if opening_aggregation == "by_thickness_v1" else 0
+            key = (a, b, icon_type, group_thickness)
             if key not in agg:
                 agg[key] = {"num": 0, "length": 0, "width": 0}
             agg[key]["num"] += 1
             agg[key]["length"] += int(length)
-            agg[key]["width"] += int(thick)
+            if opening_aggregation == "by_thickness_v1":
+                agg[key]["width"] = int(thick)
+            else:
+                agg[key]["width"] += int(thick)
 
         # 输出聚合结果
-        for (a, b, _type), stats in agg.items():
+        for (a, b, _type, _thickness), stats in agg.items():
             edges.append({
                 "roomA": a,
                 "roomB": b,

@@ -1,7 +1,7 @@
 """Portable public entry: extract, evaluate, and local asset preparation."""
 import argparse,json,sys
 from pathlib import Path
-from .api import MODES,extract,load_case,verify_source_manifest,write_json
+from .api import MODES,OPENING_AGGREGATIONS,DEFAULT_OPENING_AGGREGATION,extract,load_case,verify_source_manifest,write_json
 
 def parser():
     p=argparse.ArgumentParser(description="Geo-ELCT from supplied semantic maps. Default: no correction.")
@@ -10,6 +10,7 @@ def parser():
     e.add_argument("--config",type=Path)
     for n in ["wall","icon","rough","out"]:e.add_argument("--"+n,type=Path)
     e.add_argument("--mode",choices=MODES,default=None)
+    e.add_argument("--opening-aggregation",choices=OPENING_AGGREGATIONS,default=None)
     e.add_argument("--source-type",choices=["unknown","annotation_derived","model_prediction"],default=None)
     v=sub.add_parser("evaluate")
     v.add_argument("--definition",choices=["legacy_relation","strict_tables"],required=True)
@@ -30,10 +31,12 @@ def main(argv=None):
                 out=args.out or case["out"]
                 config=case["config"]
                 info=extract(case["wall"],case["icon"],case["rough"],out,mode=args.mode or case["mode"],source_type=args.source_type or case["source_type"],
+                             opening_aggregation=args.opening_aggregation or case["opening_aggregation"],
                              case_metadata={"sample_id":config.get("sample_id"),"building":config.get("building"),"config_sha256":case["config_sha256"]})
             else:
                 if not all([args.wall,args.icon,args.out]):raise ValueError("Provide --config or --wall --icon --out")
-                info=extract(args.wall,args.icon,args.rough or args.wall,args.out,mode=args.mode or "none",source_type=args.source_type or "unknown")
+                info=extract(args.wall,args.icon,args.rough or args.wall,args.out,mode=args.mode or "none",source_type=args.source_type or "unknown",
+                             opening_aggregation=args.opening_aggregation or DEFAULT_OPENING_AGGREGATION)
         elif args.command=="evaluate":
             verify_source_manifest()
             if args.out.exists():raise FileExistsError("Evaluation output exists; choose a new directory")

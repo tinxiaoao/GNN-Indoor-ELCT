@@ -1,6 +1,6 @@
 {
-  "purpose": "Separate Room-8 deployment illustration only; not Part C WI validation",
-  "name": "Room8-showcase",
+  "purpose": "C-4 deployment configuration",
+  "name": "C-4",
   "tx_room_ids": [
     1,
     2,
@@ -12,7 +12,6 @@
     5.0,
     28.0
   ],
-  "WI_reference_arrays": null,
-  "calibration_or_cross_configuration_evaluation": false,
-  "note": "Do not relabel this configuration as C-4v or use the C-4v WI arrays with this deployment. No Room-8 validation input is asserted by this configuration record."
+  "numerical_configuration": "../benchmarks/mwm/inputs/recovery_config.json",
+  "validation_status": "missing_verified_room8_inputs"
 }

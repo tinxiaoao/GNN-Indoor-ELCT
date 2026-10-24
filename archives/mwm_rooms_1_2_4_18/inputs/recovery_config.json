@@ -1,0 +1,305 @@
+{
+  "svg": "source.svg",
+  "scale_units_per_m": 100.4654108684552,
+  "svg_sha256": "7868dbc671ca1dfeeb107a85117c0480063518aa77401de9ffb5c7e48e4fd9cc",
+  "frequency_GHz": [
+    2.4,
+    5.0,
+    28.0
+  ],
+  "C1_parameters": [
+    [
+      -0.15652450545287172,
+      2.1133173419792497,
+      1.5063365844793544,
+      2.05636275476105
+    ],
+    [
+      -0.8570751947845143,
+      2.8131739635105917,
+      2.1259059210142204,
+      0.7328653446691367
+    ],
+    [
+      2.4830593710098796,
+      3.71860482680536,
+      5.016923953060785,
+      7.929427551277948e-22
+    ]
+  ],
+  "parameter_order": [
+    "b0",
+    "n",
+    "L_wall",
+    "L_open"
+  ],
+  "tx_room_ids": [
+    1,
+    2,
+    4,
+    18
+  ],
+  "tx_xyz_m": [
+    [
+      9.188,
+      8.312,
+      1.5
+    ],
+    [
+      4.965,
+      3.922,
+      1.5
+    ],
+    [
+      1.371,
+      10.431,
+      1.5
+    ],
+    [
+      13.779916769689786,
+      10.513867318803332,
+      1.5
+    ]
+  ],
+  "case_tx_room_ids": [
+    [
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      4
+    ],
+    [
+      1,
+      2,
+      4,
+      18
+    ]
+  ],
+  "P_tx_dBm": 15.0,
+  "grid_spacing_m": 0.15,
+  "inward_buffer_m": 0.15,
+  "buffer_join_style": 1,
+  "grid_boundary_tolerance_m": 1e-09,
+  "distance_min_m": 1.0,
+  "rx_heights_m": [
+    0.765,
+    1.06
+  ],
+  "rooms": [
+    {
+      "room_id": 1,
+      "svg_id": "f55098f2-15f0-4d4b-9019-2c0a9e22b1c9",
+      "svg_class": "Space Kitchen",
+      "source_area_m2": 17.50521383882619,
+      "source_centroid_m": [
+        10.618706802798645,
+        9.66600539224381
+      ],
+      "source_points_per_height": 689
+    },
+    {
+      "room_id": 2,
+      "svg_id": "952bd169-277e-4e6e-b18e-ec567495557c",
+      "svg_class": "Space LivingRoom",
+      "source_area_m2": 32.04849742583292,
+      "source_centroid_m": [
+        7.1760151178294285,
+        4.7259308538203815
+      ],
+      "source_points_per_height": 1305
+    },
+    {
+      "room_id": 3,
+      "svg_id": "9a99814e-ef15-4cc3-aef9-e80be302eb77",
+      "svg_class": "Space Bedroom",
+      "source_area_m2": 13.789616964718284,
+      "source_centroid_m": [
+        2.029726072214435,
+        4.927584681317874
+      ],
+      "source_points_per_height": 529
+    },
+    {
+      "room_id": 4,
+      "svg_id": "3eceacbe-70f4-431a-a6f9-5962cdf2c34c",
+      "svg_class": "Space Bedroom",
+      "source_area_m2": 10.047249804119954,
+      "source_centroid_m": [
+        2.0163361196825513,
+        10.244156588288622
+      ],
+      "source_points_per_height": 360
+    },
+    {
+      "room_id": 5,
+      "svg_id": "c1050612-ce09-4027-aa3a-b5aa040b756a",
+      "svg_class": "Space Bedroom",
+      "source_area_m2": 8.280531054683443,
+      "source_centroid_m": [
+        7.355367321072924,
+        10.403580605155112
+      ],
+      "source_points_per_height": 315
+    },
+    {
+      "room_id": 6,
+      "svg_id": "a2a000aa-1180-40bd-997b-3355c9a6ba4e",
+      "svg_class": "Space Bath Shower",
+      "source_area_m2": 5.549133421633553,
+      "source_centroid_m": [
+        13.823563632446772,
+        4.549326937989039
+      ],
+      "source_points_per_height": 210
+    },
+    {
+      "room_id": 7,
+      "svg_id": "5114076b-cabb-4b45-8dd5-2a97c2a64c8a",
+      "svg_class": "Space Bath",
+      "source_area_m2": 1.5093927100154285,
+      "source_centroid_m": [
+        4.191392802358178,
+        10.464497093199073
+      ],
+      "source_points_per_height": 40
+    },
+    {
+      "room_id": 8,
+      "svg_id": "cdf0881d-6c44-4541-a0de-2d2c261b86d1",
+      "svg_class": "Space Entry Lobby",
+      "source_area_m2": 9.355422815587001,
+      "source_centroid_m": [
+        5.80387062714048,
+        8.15696136930466
+      ],
+      "source_points_per_height": 340
+    },
+    {
+      "room_id": 9,
+      "svg_id": "98708e94-2a86-448c-ba5c-dfce1d13b693",
+      "svg_class": "Space DraughtLobby",
+      "source_area_m2": 1.554476979279117,
+      "source_centroid_m": [
+        5.406089472038718,
+        10.464497093199073
+      ],
+      "source_points_per_height": 48
+    },
+    {
+      "room_id": 10,
+      "svg_id": "95c35231-a6e4-40be-9971-ac7b034419f5",
+      "svg_class": "Space Storage",
+      "source_area_m2": 2.6168822575435686,
+      "source_centroid_m": [
+        11.611707849654442,
+        6.7197754347907015
+      ],
+      "source_points_per_height": 90
+    },
+    {
+      "room_id": 11,
+      "svg_id": "b9db0d7b-3e9c-44fe-bc68-575dab85d006",
+      "svg_class": "Space Closet WalkIn",
+      "source_area_m2": 2.132523654267246,
+      "source_centroid_m": [
+        2.765130780819068,
+        7.902023125545866
+      ],
+      "source_points_per_height": 64
+    },
+    {
+      "room_id": 12,
+      "svg_id": "6756ff8d-c929-44ad-91c6-dddebefc6648",
+      "svg_class": "Space Closet WalkIn",
+      "source_area_m2": 1.333913133076738,
+      "source_centroid_m": [
+        14.24221518263126,
+        8.16166472532148
+      ],
+      "source_points_per_height": 36
+    },
+    {
+      "room_id": 13,
+      "svg_id": "ba5b6a16-4a6e-49b0-a5a7-77476d589a96",
+      "svg_class": "Space Storage",
+      "source_area_m2": 5.202953656640493,
+      "source_centroid_m": [
+        13.500865504606043,
+        12.994372776809147
+      ],
+      "source_points_per_height": 186
+    },
+    {
+      "room_id": 14,
+      "svg_id": "10020024-ca5c-4674-b840-6de3e4797e90",
+      "svg_class": "Space Garage",
+      "source_area_m2": 14.397399577036039,
+      "source_centroid_m": [
+        13.500865504606045,
+        15.212101227566501
+      ],
+      "source_points_per_height": 558
+    },
+    {
+      "room_id": 15,
+      "svg_id": "e29d785c-59ba-4407-b8dd-6df96567df85",
+      "svg_class": "Space Den Fireplace",
+      "source_area_m2": 9.861489386174584,
+      "source_centroid_m": [
+        12.936691232983202,
+        2.055234714267535
+      ],
+      "source_points_per_height": 364
+    },
+    {
+      "room_id": 16,
+      "svg_id": "2823064c-8449-45cd-91b5-87c58fc2d4b0",
+      "svg_class": "Space Undefined",
+      "source_area_m2": 3.727613024885954,
+      "source_centroid_m": [
+        11.655354712411432,
+        4.549326937989039
+      ],
+      "source_points_per_height": 126
+    },
+    {
+      "room_id": 17,
+      "svg_id": "63d6e59c-d5ee-4e7b-aff8-0affa7cd5e40",
+      "svg_class": "Space TechnicalRoom Boiler",
+      "source_area_m2": 4.2678905514249275,
+      "source_centroid_m": [
+        13.779916769689784,
+        6.7197754347907015
+      ],
+      "source_points_per_height": 150
+    },
+    {
+      "room_id": 18,
+      "svg_id": "cbe55f98-9a20-4e13-afa8-5bd79c8d370d",
+      "svg_class": "Space UserDefined",
+      "source_area_m2": 8.802539757124219,
+      "source_centroid_m": [
+        13.779916769689786,
+        10.513867318803332
+      ],
+      "source_points_per_height": 330
+    }
+  ],
+  "case_labels": [
+    "C-1",
+    "C-2",
+    "C-3",
+    "C-4v"
+  ],
+  "Room18_Tx_position_basis": "Geometric centroid retained from archived baseline; not asserted to be the exact WI coordinate.",
+  "C4_reference_basis": "54 room ARPs supplied explicitly by the user when confirming the Rooms 1,2,4,18 simulation.",
+  "C1_parameter_basis": "BuildingC_recalculated_empirical_MWM_ARP.xlsx!MWM_Calibration!B4:E6",
+  "Proposed_basis": "BuildingC_empirical_ARP_results_with_errors(5).xlsx!Proposed_Model_Error",
+  "Rx_basis": "SVG reconstruction; not a verified export of the WI receiver-coordinate list."
+}

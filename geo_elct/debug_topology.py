@@ -8,6 +8,8 @@ from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 import numpy as np
 from PIL import Image
 
+from . import DEFAULT_OPENING_AGGREGATION, OPENING_AGGREGATIONS
+
 
 _HERE = Path(__file__).resolve().parent
 
@@ -723,6 +725,7 @@ def run_topology(
     room_fragment_correction: str = "none",
     correction_mode: Optional[str] = None,
     lightweight: bool = False,
+    opening_aggregation: str = DEFAULT_OPENING_AGGREGATION,
 ) -> dict:
     """Run the Geo-ELCT topology translator and save Excel plus canonical debug artifacts."""
     from .detect_adjacency import detect_adjacency
@@ -846,6 +849,7 @@ def run_topology(
         icon_array,
         wall_label_array,
         max_wall_thickness=min_len,
+        opening_aggregation=opening_aggregation,
     )
 
     room_ext_stats = exterior_wall_segments(region_id_map, wall_label_array, wall_outside_width)
@@ -894,6 +898,7 @@ def run_topology(
         "output_dir": str(output_path),
         "correction_mode": correction_mode,
         "active_correction_modules": active_modules,
+        "opening_aggregation": opening_aggregation,
         "lightweight_artifacts": bool(lightweight),
         "repair_mode": repair_mode,
         "room_fragment_correction": "interior_noise" if do_fragment else "none",
@@ -919,6 +924,9 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Ablation mode. Recommended main mode: fragment_plus_wall_plus_opening.",
     )
     parser.add_argument("--lightweight", action="store_true", help="Skip debug PNG/XLSX files and write canonical JSON directly.")
+    parser.add_argument("--opening-aggregation", choices=OPENING_AGGREGATIONS,
+                        default=DEFAULT_OPENING_AGGREGATION,
+                        help="Aggregate internal opening dimensions independently of correction mode.")
     return parser
 
 
@@ -933,6 +941,7 @@ def main() -> None:
         room_fragment_correction=args.room_fragment_correction,
         correction_mode=args.correction_mode,
         lightweight=args.lightweight,
+        opening_aggregation=args.opening_aggregation,
     )
     print(json.dumps(_json_safe(summary), ensure_ascii=False, indent=2))
 
