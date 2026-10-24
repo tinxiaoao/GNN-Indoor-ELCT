@@ -29,17 +29,23 @@ preprocessing/graph/evaluation chain and missing items are documented in
 found. Backbone weights or a separate CubiCasa CNN checkpoint are not complete
 VecFloorSeg checkpoints and are not substitutes. Full inference is NOT RUN.
 
-Part B inputs are bound in `experiments/fixed_inputs.json` and acquired only
-from authorized local files using `scripts/prepare_fixed_inputs.py`. Neither
-annotation-derived nor synthetic inputs should be relabeled `model_prediction`.
+Part B uses all 20 cases in `experiments/part_b_inputs.json`, prepared from local
+files using `scripts/prepare_fixed_inputs.py`. The ranges, seeds and correction
+modes are in `experiments/part_b_protocol.json`. These annotation-derived inputs
+and the synthetic example are not model predictions.
 
-Part C requires the exact external `R1Q6_WI_Confirmed_Reproducible.zip` whose
-SHA256 is recorded in `benchmarks/mwm/external_inputs.json`. The preparation
-script extracts nine whitelisted, hash-bound input files into a new local
-directory. The external SVG and geometry arrays are not bundled.
-Author-provided numerical room references, parameters and predictions are
-included as frozen references. The original archive contains other material;
-it is not redistributed wholesale.
+Part C uses C-1 = [1], C-2 = [1,2], C-3 = [1,2,4] and C-4 = [1,2,4,8] at
+2.4, 5 and 28 GHz. Follow the [input schema](../benchmarks/mwm/input_schema.md)
+to provide the source SVG, verified WI Tx coordinates and coordinate transform,
+actual per-room receiver coordinates and per-Tx received powers, matching WI
+and Proposed room ARPs, and a source/hash manifest. The fourth transmitter must
+be verified inside Room 8. The supplied template still lacks these verified
+Room-8/WI/Rx inputs, so the formal runner stops before calculating results.
+
+The earlier Room-18 numerical files and the
+`R1Q6_WI_Confirmed_Reproducible.zip` preparation interface are retained only in
+[the Rooms 1,2,4,18 archive](../archives/mwm_rooms_1_2_4_18/README.md). They do
+not supply the formal C-4 reference data.
 
 Public provenance paths are project-relative. Private local manifests, absolute
 paths and newly computed runs are excluded from the repository.

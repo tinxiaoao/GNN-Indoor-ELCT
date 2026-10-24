@@ -7,12 +7,13 @@ files support full cell/mask/exterior comparison; run logs/caches and absolute
 local path metadata are not distributed. Run extraction to a new directory first,
 then evaluate explicitly against this target.
 
-`baseline_manifest.json` and `frozen_A_manifest.json` are hash-only historical
-identities of real building outputs and the separate A source variant. Their
-binary data is external pending rights review. Newly written XLSX ZIP bytes may
-differ from frozen bytes while cell values match; comparisons check every cell.
+`baseline_manifest.json` and `frozen_A_manifest.json` retain hash-only identities
+of earlier building outputs and the separate A source variant. Their original
+binary comparison files are external. Newly written XLSX ZIP bytes may differ
+while cell values match; compare workbook cells rather than ZIP bytes.
 
-Part C's saved numerical references remain under `benchmarks/mwm/results/` and
-are used for explicit evaluation only. `run.py` performs new model computation
-in a fresh working directory, never copies predictions into computed outputs as
-a substitute for calculating them.
+Earlier MWM references and results are preserved under
+[archives/mwm_rooms_1_2_4_18](../archives/mwm_rooms_1_2_4_18/README.md). Their
+fourth deployment uses Room 18. Formal C-4 uses Rooms 1,2,4,8 and requires the
+verified inputs in [the MWM schema](../benchmarks/mwm/input_schema.md); no
+verified C-4 numerical results are bundled.

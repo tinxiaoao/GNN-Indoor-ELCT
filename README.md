@@ -36,9 +36,18 @@ matlab -batch "addpath('matlab'); run_pwb_case('configs/pwb_synthetic_multifrequ
 python -B -m unittest discover -s tests -v
 ```
 
-Each run needs a new output directory. The default correction mode is `none`; `legacy_revised`, `reference_faithful` and `correction_v2` are separate, explicitly selected modes. Algorithms, physical parameters and saved numerical results are preserved.
+Each run needs a new output directory. The default correction mode is `none`; `legacy_revised`, `reference_faithful` and `correction_v2` are separate, explicitly selected modes. Internal door/window components with the same room pair, type and thickness have their lengths summed while retaining that thickness. Use `--opening-aggregation legacy_width_sum` to reproduce the earlier dimension aggregation. `Count` gives the exported dimension entries; component counts are stored separately. Lengths use `px2m` and areas use its square when converting to physical units.
 
 For your own maps, use `python -m geo_elct extract --help`. Label definitions, units and configuration fields are in [configuration](docs/configuration.md) and the [MATLAB interface](docs/matlab_interface.md). The [MWM instructions](benchmarks/mwm/README.md) explain the separate benchmark and its required external geometry inputs.
+
+The [Part B protocol](docs/part_b.md) gives the fixed five-seed perturbation settings and topology-matching results. MWM uses C-1 = [1], C-2 = [1,2], C-3 = [1,2,4], and C-4 = [1,2,4,8]. Supply the verified WI transmitter coordinates, actual receiver samples, received-power exports and matching Proposed room data described by the [MWM input schema](benchmarks/mwm/input_schema.md), then run:
+
+```powershell
+python benchmarks/mwm/run.py --inputs "path/to/verified-C4-inputs" --validate-only
+python benchmarks/mwm/run.py --inputs "path/to/verified-C4-inputs" --output "path/outside/repository/new-mwm-run"
+```
+
+The supplied C-4 template requires verified Room 8 inputs before calculation. Earlier Rooms 1, 2, 4 and 18 benchmark data and their replay commands are in the [archive](archives/mwm_rooms_1_2_4_18/README.md).
 
 ## Public dataset
 

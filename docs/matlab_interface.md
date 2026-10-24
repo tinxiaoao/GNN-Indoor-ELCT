@@ -1,10 +1,10 @@
 # MATLAB PWB interface
 
-`matlab/run_pwb_case.m` preserves the working JSON adapter from the existing repository. Its only change in this candidate is a descriptive known-issue message. The eight functions and material table in `matlab/core/` are byte-identical to both the original IndoorEMT files and the existing repository. Original source comments are retained; this document explains the interface in English. `matlab/source_identity.json` records their SHA256 values, and `verify_core_identity` verifies the actual files before computation. No GNN, geometry rule, material formula, solver formula, layer or boundary convention is changed.
+`matlab/run_pwb_case.m` reads exported Geo-ELCT tables and an explicit JSON configuration. The solver functions and material table in `matlab/core/` retain their source identities, checked by `verify_core_identity` against `matlab/source_identity.json` before computation. The adapter preserves material formulas, layers and boundary conventions.
 
 ## Run from a semantic-map example
 
-Run these commands from the candidate root with the Python environment described in `environments/` and a licensed MATLAB installation on PATH:
+Run these commands from the repository root with the Python environment described in `environments/` and a licensed MATLAB installation on PATH:
 
 ```powershell
 python -m geo_elct extract --config examples/synthetic_two_rooms/case.json --mode none --out runs/synthetic_two_rooms_none
@@ -13,7 +13,7 @@ matlab -batch "restoredefaultpath; addpath('matlab'); run_pwb_case('configs/pwb_
 
 The packaged example contains synthetic semantic maps, not a GNN prediction or a paper-building input. They can also be regenerated with `python scripts/make_synthetic_example.py --out local/synthetic_two_rooms`, then extracted using `local/synthetic_two_rooms/case.json`. The MATLAB configuration reads `runs/synthetic_two_rooms_none/debug_roomself.xlsx` and `debug_topology_edges.xlsx`, and writes `runs/pwb_synthetic_multifrequency`. It uses two distinct frequencies, 2.4 and 5 GHz, an explicitly chosen synthetic scale of 0.02 m/px and a 15 dBm transmitter in Room 1. These example settings are not a claim about the manuscript scenarios. Every JSON path is relative to its JSON file. Each output directory must be new; reruns require an explicitly new `output_dir`.
 
-The separately named `configs/pwb_C4_room8_display.json` preserves the source display transmitter rooms `{1,2,4,8}` and source scale/heights, with a genuine two-frequency example. Prepare Building C tables locally at its configured path first. This display is distinct from Part C C-4v `{1,2,4,18}` and does not read, select or relabel WI arrays.
+`configs/pwb_C4_room8_display.json` uses the C-4 transmitter room set `{1,2,4,8}`, with the existing source scale/heights and two distinct frequencies. Prepare Building C tables at its configured path first. This PWB interface example does not read WI reference arrays or verify physical Tx coordinates. Formal Part C calculations at 2.4, 5 and 28 GHz require the separate [verified WI input bundle](../benchmarks/mwm/input_schema.md).
 
 ## Schema, units and calls
 
@@ -35,7 +35,7 @@ Only `matlab/core` is added, and every resolved solver path is checked. No recur
 
 ## Preserved physical settings
 
-The core keeps ceiling/floor absorption and vertical Outside coupling disabled, 0.12 m inactive ceiling/floor middle thickness, 1000 angular samples and default zero diagonal regularization. Exterior layers use material rows `[15,19,15]`, interior `[15,16,15]`, with the original 5 mm outer layers and table-derived middle thickness. Window stacks use `[13,21,13]` with a 1 mm air gap; closed doors use `[21,5,21]` and the original air layers. Original callers pass `Wm/4` for window/door middle-thickness conventions. Material parameters remain in `matlab/core/epsilon_paper_tabel.txt`. The correspondence of these switches and thickness conventions to every manuscript scenario still needs author confirmation.
+The core keeps ceiling/floor absorption and vertical Outside coupling disabled, 0.12 m inactive ceiling/floor middle thickness, 1000 angular samples and default zero diagonal regularization. Exterior layers use material rows `[15,19,15]`, interior `[15,16,15]`, with the original 5 mm outer layers and table-derived middle thickness. Window stacks use `[13,21,13]` with a 1 mm air gap; closed doors use `[21,5,21]` and the original air layers. Original callers pass `Wm/4` for window/door middle-thickness conventions. Material parameters remain in `matlab/core/epsilon_paper_tabel.txt`. Use the actual scenario's configuration when interpreting these settings.
 
 ## Actual checks and limitations
 
@@ -44,7 +44,7 @@ The release check ran licensed MATLAB R2025b, version 25.2.0.2998904. `matlab.co
 | Fresh check | Observed status |
 |---|---|
 | Synthetic two-room input, `[2.4e9,5e9]` Hz | Completed in the candidate and a private isolated copy of the original core. RoomIDs, frequency vector, full wide table, transmitter vector, loss, internal and external/diagonal coupling, propagation matrices, field and ARP arrays were exactly equal (`isequaln`, zero absolute/relative tolerance). |
-| Fresh Building C/7795 correction_v2 input, Room-8 display `{1,2,4,8}`, `[2.4e9,5e9]` Hz | Completed on 18 rooms; all ten full numerical/table fields exactly matched a fresh isolated original-core evaluation with zero tolerance. This is not the Part C C-4v configuration or a validation against WI. |
+| Building C/7795 correction_v2 input, C-4 room set `{1,2,4,8}`, `[2.4e9,5e9]` Hz | Completed on 18 rooms; all ten full numerical/table fields exactly matched an isolated original-core evaluation with zero tolerance. This checks solver equivalence for these inputs, without WI validation. |
 | Same synthetic input, one frequency `[2.4e9]` Hz | Failed in both versions with `assemblePropagationMatrix:SizeMismatch`; the preassembly arrays were exactly equal. This is an observed failure, not single-frequency support. |
 
 To observe the real singleton failure directly after creating the two Geo-ELCT tables:

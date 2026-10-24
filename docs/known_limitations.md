@@ -3,14 +3,14 @@
 * **GNN NOT RUN:** full checkpoint/configuration/input binding, compatible
   dependency lock and verified prediction-to-map conversion are absent. Source
   and export-map interfaces do not establish end-to-end inference.
-* **Part B aggregate NOT REPRODUCED:** two different fixed input families were
-  found. A unique Supplementary S2 source/mode/evaluator binding is unconfirmed;
-  B's GNN-output description conflicts with annotation-derived located maps.
-  Ten finite new extractions establish migration, not five-seed recovery rates.
+* **Part B scope:** all five fixed seeds at each of four levels were executed
+  under `none` and `correction_v2` with `by_thickness_v1`. The results in
+  [Part B](part_b.md) apply to the reference-faithful protocol on sample 7795;
+  they do not establish recovery for other defect distributions or buildings.
+  Clean repeats one map pair, and the inputs are annotation-derived.
 * **Preserved geometry issues:** old modes can erase clean exterior windows.
   V2 retains an unresolved A corner window and historical legacy-family failures.
-  Runtime success is not full geometric or EM validity. V2 diagnostics always
-  keep `em_ready=false`.
+  Runtime success does not establish full geometric or physical validity.
 * **Observed MATLAB singleton failure:** a true one-column `[2.4e9]` input fails
   in both original and candidate at `assemblePropagationMatrix:SizeMismatch`.
   Real `[2.4e9,5e9]` checks pass. No duplicated-frequency workaround is included.
@@ -19,21 +19,21 @@
   agreement does not validate that area accounting. This needs a separate
   numerical correction and before/after validation, outside release preparation.
 * **Physical scenario binding:** material layers/thickness, ceiling/floor
-  switches and door state are preserved. Their correspondence to every paper
-  scenario is not confirmed. Room-8 display and C-4v validation are different.
-* **Part C scope:** fresh recovered MWM calculation passed the original
-  tolerance and S3–S5 checks, but fixed Proposed values were not regenerated.
-  WI software was not run. Room-18 geometric-center and receiver-grid coordinates
-  are not independently matched to WI coordinate export.
+  switches and door state are preserved. Multifrequency PWB examples check
+  the solver interface; they do not validate WI reference powers or Tx locations.
+* **Part C inputs:** formal C-4 uses Rooms 1,2,4,8. The verified Room-8 Tx
+  location, its WI projects/power exports, exact receiver coordinates and
+  matching Proposed references are still missing. The runner stops without
+  numerical results until the [input contract](../benchmarks/mwm/input_schema.md)
+  is satisfied. Earlier Rooms 1,2,4,18 numerical files remain in
+  [the archive](../archives/mwm_rooms_1_2_4_18/README.md); they do not validate C-4.
 * **Environment installation:** a fresh Python 3.11 virtual environment passed
   the standard online installation of the pinned translator requirements and
   editable package.
 * **Third-party materials:** CubiCasa5K-derived extraction outputs are included
   under the original CC BY-NC 4.0 terms; attribution is retained in
   [third_party/README.md](../third_party/README.md). VecFloorSeg source, model
-  weights and external Part C SVG/geometry inputs remain external. The
-  Supplementary document is copied unchanged; no manuscript text or numerical
-  table was edited.
+  weights and the Part C source geometry/WI inputs remain external.
 
 Historical source-specific issues and parameter conventions remain available in
 [known_issues.md](known_issues.md). Those prior finite checks are historical

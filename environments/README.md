@@ -28,10 +28,16 @@ Install MWM requirements before using `benchmarks/mwm/run.py`:
 
 ```powershell
 python -m pip install -r environments/mwm-requirements.txt
-python benchmarks/mwm/verify_results.py
+python benchmarks/mwm/run.py --inputs "path/to/verified-C4-inputs" --validate-only
+python benchmarks/mwm/run.py --inputs "path/to/verified-C4-inputs" --output "path/outside/repository/new-mwm-run"
+python benchmarks/mwm/verify_results.py --results "path/outside/repository/new-mwm-run"
 ```
 
-The existing 29 unit tests and synthetic extraction were checked using Python
-3.11.10 with the translator versions above (loaded OpenCV version 4.11.0).
+The MWM commands require the actual C-4 Room-8 Tx location, WI receiver/power
+exports and matching Proposed references described in the
+[input schema](../benchmarks/mwm/input_schema.md). The supplied template is
+incomplete and cannot produce numerical results. Earlier Rooms 1,2,4,18
+replay commands are in the [archive](../archives/mwm_rooms_1_2_4_18/README.md).
+
 Numerical limitations and MATLAB's preserved singleton-frequency failure are
 documented in [known issues](../docs/known_issues.md).
