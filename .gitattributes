@@ -1,0 +1,2 @@
+# Keep hash-bound source, reference results and dataset files byte-for-byte.
+* -text

@@ -1,0 +1,39 @@
+{
+  "1": {
+    "walls": [
+      [
+        "horizontal",
+        170,
+        10
+      ],
+      [
+        "vertical",
+        120,
+        10
+      ]
+    ],
+    "openings": [
+      [
+        "window",
+        "horizontal",
+        35,
+        10
+      ]
+    ]
+  },
+  "2": {
+    "walls": [
+      [
+        "horizontal",
+        170,
+        10
+      ],
+      [
+        "vertical",
+        120,
+        10
+      ]
+    ],
+    "openings": []
+  }
+}

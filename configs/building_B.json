@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "building": "B",
+  "sample_id": "11184",
+  "input_source_type": "annotation_derived",
+  "dataset_split": "train",
+  "maps": {
+    "wall": {
+      "path": "../examples/local_assets/11184/wall_svg.png",
+      "sha256": "4ab4f152ed534bf28687b4ea675dfbad0b33db1af0e40349ec6cc40fa9db5df1",
+      "width": 953,
+      "height": 1128
+    },
+    "icon": {
+      "path": "../examples/local_assets/11184/icon_svg.png",
+      "sha256": "0a5697be65cbe7186c6aeeb4166bff3877b0602efd43785c1c7a29b7e3564334",
+      "width": 953,
+      "height": 1128
+    },
+    "rough": {
+      "path": "../examples/local_assets/11184/svgImg_roughcast.png",
+      "sha256": "708c366b6b0241a47113b773cfc212226083b6a98b76306055e4d1f3989ee74e",
+      "width": 953,
+      "height": 1128
+    }
+  },
+  "extraction": {
+    "mode": "none",
+    "lightweight": false
+  },
+  "outputs": {
+    "directory": "../runs/building_B_none"
+  },
+  "reference_results": {
+    "status": "Held in private audit; not supplied as a runtime input",
+    "room_table": "../reference_results/local/11184/debug_roomself.xlsx",
+    "edge_table": "../reference_results/local/11184/debug_topology_edges.xlsx",
+    "room_mask": "../reference_results/local/11184/region_id_map.npy",
+    "topology_image": "../reference_results/local/11184/debug_topology_result.png"
+  }
+}

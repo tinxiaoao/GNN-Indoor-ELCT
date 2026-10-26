@@ -1,0 +1,17 @@
+[
+  {
+    "roomA": 1,
+    "roomB": 2,
+    "type": "door",
+    "num": 1,
+    "length": 30,
+    "width": 10
+  },
+  {
+    "roomA": 1,
+    "roomB": 2,
+    "type": "wall",
+    "length": 120,
+    "width": 10
+  }
+]

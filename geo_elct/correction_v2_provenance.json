@@ -1,0 +1,10 @@
+[
+  {
+    "source_identity": "correction_v2.0",
+    "package_path": "geo_elct/correction_v2.py",
+    "packaged_sha256": "32cbc81b680c1838a782a6639ee4e2438a06f1a8afb55ff1462bf9a7f222ecf0",
+    "original_sha256": null,
+    "change_type": "new_versioned_opening_rules; reuse_unchanged_fragment_boundary_gap_functions",
+    "frozen_dependency_identity": "geo_elct/source_provenance.json"
+  }
+]

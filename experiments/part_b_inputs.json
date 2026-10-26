@@ -1,0 +1,445 @@
+{
+  "note": "Building C, CubiCasa5K sample 7795. Complete fixed Part B inputs; clean repeats the same maps.",
+  "cases": [
+    {
+      "name": "reference_faithful_clean_0",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "clean",
+      "seed": 0,
+      "sha256": {
+        "wall": "a48005749de55616e60b99fe36afad574194cce7c8a33ab29ffb88cd1d700aec",
+        "icon": "01fcdb5201beeb830a50d9763bda6de47b69b886d32e61e44ae161370bc9dd28",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_0/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_0/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_clean_1",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "clean",
+      "seed": 1,
+      "sha256": {
+        "wall": "a48005749de55616e60b99fe36afad574194cce7c8a33ab29ffb88cd1d700aec",
+        "icon": "01fcdb5201beeb830a50d9763bda6de47b69b886d32e61e44ae161370bc9dd28",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_1/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_1/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_clean_2",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "clean",
+      "seed": 2,
+      "sha256": {
+        "wall": "a48005749de55616e60b99fe36afad574194cce7c8a33ab29ffb88cd1d700aec",
+        "icon": "01fcdb5201beeb830a50d9763bda6de47b69b886d32e61e44ae161370bc9dd28",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_2/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_2/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_clean_3",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "clean",
+      "seed": 3,
+      "sha256": {
+        "wall": "a48005749de55616e60b99fe36afad574194cce7c8a33ab29ffb88cd1d700aec",
+        "icon": "01fcdb5201beeb830a50d9763bda6de47b69b886d32e61e44ae161370bc9dd28",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_3/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_3/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_clean_4",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "clean",
+      "seed": 4,
+      "sha256": {
+        "wall": "a48005749de55616e60b99fe36afad574194cce7c8a33ab29ffb88cd1d700aec",
+        "icon": "01fcdb5201beeb830a50d9763bda6de47b69b886d32e61e44ae161370bc9dd28",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_4/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/clean/seed_4/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_mild_0",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "mild",
+      "seed": 0,
+      "sha256": {
+        "wall": "c7ff4b6801af012435582d81a4944d130fe463ee00eed656c5e4b471d8d17a89",
+        "icon": "7b9f497fc1690e31cf5f1bb158c4529b67dbb33bca6e1c83842cb56030492be1",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_0/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_0/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_mild_1",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "mild",
+      "seed": 1,
+      "sha256": {
+        "wall": "15f757ccc66a7b94b21c9b11aac2457122a4daa1d6677ab5d6c67e38e7da209b",
+        "icon": "3f80210ded308314039e4e1b385e5ed1d47d475b0f6d3cf93d62adadc229b702",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_1/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_1/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_mild_2",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "mild",
+      "seed": 2,
+      "sha256": {
+        "wall": "8ebc016c1cbccbb3f7aa8919f8841eb363915c3995f9086ce7e33a9924af215b",
+        "icon": "5b629a1f29f50849c2649e28a5b9ee979ab45b55c6e885b7161855bb330b9a41",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_2/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_2/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_mild_3",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "mild",
+      "seed": 3,
+      "sha256": {
+        "wall": "18cb0e22da9ec97dc14d64e5093143cb98973bdf00bcaaea7a3b5a583d13fd8e",
+        "icon": "8ff8422d8ed3323b9f3d6cfb6c1131777c2e8f1f13119ee7ac6c0a06bf8d6186",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_3/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_3/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_mild_4",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "mild",
+      "seed": 4,
+      "sha256": {
+        "wall": "e91123c08952a4b300e7a6253b95c2cc12ff9a2e0d38450011f9e9f7c4ccc6a6",
+        "icon": "9dff58fffa37f8ed875a895c0e8ecb645fc2ff435ff0622f233a12f28f198fe8",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_4/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/mild/seed_4/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_moderate_0",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "moderate",
+      "seed": 0,
+      "sha256": {
+        "wall": "e98765edf21252c6799461643fefc4b117b1046d568564def58253225f93cd51",
+        "icon": "dcf0274594ed43bea739ef2dc48c53b499680b8eb49f9a83d2ed58b1a145162b",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_0/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_0/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_moderate_1",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "moderate",
+      "seed": 1,
+      "sha256": {
+        "wall": "1f19040a95e97780c77544eb6855022df7a87383feb855637281febe2b48d43f",
+        "icon": "2b777bb6051848bc9b65763a1de1dd59a3d5d72678073f732b1ebe9bcac9fa68",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_1/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_1/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_moderate_2",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "moderate",
+      "seed": 2,
+      "sha256": {
+        "wall": "7edd7938932b97883f1280dcf5a9581342451c46126b1c88cda6a0de872e064b",
+        "icon": "e0e5f8e0625048f252758499c282cf62007a79b06bc0ee3e09571d5e5afab963",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_2/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_2/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_moderate_3",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "moderate",
+      "seed": 3,
+      "sha256": {
+        "wall": "32da3248b0568a9c7f5c581dd80718cc7d5461092d4f1375c894fc95185362a5",
+        "icon": "96f6b65a83a17c45e9a12f769475e6d34d30fb518d676bb51a47570067309c7b",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_3/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_3/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_moderate_4",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "moderate",
+      "seed": 4,
+      "sha256": {
+        "wall": "6869744401e44e6bf48cc36c38dccb65c70360f70328245c2fb711ca8cda7a1a",
+        "icon": "c24e474bf07540b1337f8cecac60380f34a43aed5ea49c6f04332ba87284641d",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_4/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/moderate/seed_4/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_severe_0",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "severe",
+      "seed": 0,
+      "sha256": {
+        "wall": "c04d67b19d848017aa31f2c17307a29a6af138464c1fce2595b540c0495440e4",
+        "icon": "05db9ea4e1883e771ad8b0d4ddc206cd9c5d024b2793b42b2b951048bc2b1f71",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_0/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_0/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_severe_1",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "severe",
+      "seed": 1,
+      "sha256": {
+        "wall": "679d091467af129a3a7a6b9d4a7ce5ce5ba7ba834d12c1fab6f82d9fc09468d7",
+        "icon": "356103ad0c7c50dbab37637fd156f9cee0decff55d66a92867087b27a7b7ba37",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_1/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_1/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_severe_2",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "severe",
+      "seed": 2,
+      "sha256": {
+        "wall": "5ecf8150781f4b2d262e2fefe121e4e418bd22d918c2551cb00f6769c3a3483d",
+        "icon": "bc66d9977204ff82e1f906b12a6cdb36d4e4ef3fa10e6107de0f01a11cab760e",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_2/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_2/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_severe_3",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "severe",
+      "seed": 3,
+      "sha256": {
+        "wall": "bf7ed83fb1e6a24730bb62c333e3c5e2440549ec2e766f27fad868ae14b8750a",
+        "icon": "6d3136a12fc8d8ff82d3f966317f5c23758c776783838473451f748842de654f",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_3/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_3/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    },
+    {
+      "name": "reference_faithful_severe_4",
+      "sample_id": "7795",
+      "source_type": "annotation_derived",
+      "family": "reference_faithful",
+      "level": "severe",
+      "seed": 4,
+      "sha256": {
+        "wall": "988ed226548f092211beacd9ad37921f81766b9b1a5cddd6ba1d2e2441d34d97",
+        "icon": "f93f6631255f2c3f483d54ea72ea04651ff2f4c7b4f2fd9d7595c507218c0139",
+        "rough": "f77e1d04d71a637dd44de6754b8ac5d856d65ae96a6ef9f5224b9af4b687327e"
+      },
+      "source_paths": {
+        "wall": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_4/perturbed_wall_svg.png",
+        "icon": "code/R1-Q4/indoor_topology/experiments/r1q4_reference_faithful_7795/maps/severe/seed_4/perturbed_icon_svg.png",
+        "rough": "code/cubicasa5k/high_quality_architectural/7795/svgImg_roughcast.png"
+      },
+      "modes": [
+        "none",
+        "correction_v2"
+      ]
+    }
+  ]
+}
